@@ -1,0 +1,1810 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="ie ie9 lte9" lang="en"><![endif]-->
+<!--[if !IE]><!--><html lang="en"><!--<![endif]-->
+<head dir="ltr">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"XA4GVl5ACwAEV1JQAA=="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,n,e)])}catch(s){try{i("ierr",[s,c.now(),!0])}catch(u){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t){i("err",[t,c.now()])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),u=!0)}s.on("fn-start",function(t,n,e){u&&(d+=1)}),s.on("fn-err",function(t,n,e){u&&(this.thrown=!0,o(e))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(18)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(18)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(18)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(18)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):w?w(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(18)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!w&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}finally{c.emit("fn-end",[f.now()],e)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],16:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],17:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],18:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=h(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([g,e,r,a]),a}}function p(t,n){v[t]=h(t).concat(n)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var v={},y={},g={on:p,emit:e,get:m,listeners:h,context:n,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(15),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!x++){var t=b.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=l.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(15),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1059.min.js"},g=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:v,features:{},xhrWrappable:g};t(12),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),c("mark",["firstbyte",s],null,"api");var x=0,E=t(17)},{}]},{},["loader",2,10,4,3]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":1,"licenseKey":"1beac94c95","agent":"","transactionName":"NQQGYUZWDUNSVUMPWQxOIkBaVBdZXFgYBVkXExdQQ1YRVR1AXgNBEU8NW1BSGwpwWUIURQcWBUdRfg1UVk4ZAVMW","atts":"GUMRFw5MQUhRaUIVUxA+F0FVQwYeVFNDOVsDDx0bR1ISRVZYQw9XDk8GWVtUCENsWUISFFhQUxkWTwFvRkVSFGkRFQVBURkEVUdpWgdYG08GWVtUCENsWUISFFhTVRkWTwFvRkVSFGkRFQVBURkQVUdpWgdYG08XXE5SQQoCAxtERQcQSldYWABbbFVYE1gWEkpZQF48U1xYRBNbBxNGDwUbQUNWRxkFQxATAVtAGQFcXFVcOV8GQ14XVlsMU1gbQVcMIQ4IQFlVClFrHXQ1ey9PVQUFT0gCZwQHVwE9U09BTUcGcEVTRRJfAQAIHlZbDFNYdgNTBFNWUFcAAlBRCwJUVFdaVAIDBVZWVFdTA1QOW1hXFxgVG1JsQ0QDRD0SEFRAUk1XVkJoC1cMGEpXWFgAW0BpRQNHFwQXQVFTQQoCAgVKFBoDO0BHUhFvQEJWElNMEgFBa1oCXkoYVAdaDhJGDwUbQUNWRxkFQxATAVtAGQdZQEZbB089DwVYURVZEmRTUg0WUEE0R1tdBlNHDBc1UwMTB10Udg9XXEReEl4PEkYZFlQMRUFFUjlfBkNeF1dYFkJAUxoQB1giC1lBWgFZUm4cJWUvLEoEBAYbGwFiBVYHVT5WFxgVG1JsQ0QDRD0SEFRAUk1XVkJoC1cMGEpWW0IRQ1YYRA9MB0NeBAEbQUhRaUIVUxA+F0FVQwYeVFNDOVsDDx0bV18CQEdTRUhUDg4HXkdoDEVHFA1VGkASAUQaVQ9fUF1oBVkXDxBGGkEGQkdfVAdaQFtWGRZEBkEdVFsJVQk+B1pBWRdDHUVSF0MHDxBcVVtBCgIaFR5UPRQXUEZoEERSQlJIUQcVO1hVWRoeV0NFB0ILDgoXDgVRHgIBDlcEVFZXDAEHUgkGBRtERQcQSkVbRApEWllZRAxTTUZGUUZNVFpFRwpXGz4KVFlSQQoRYVIDXUJTRGVGWAlVUEINRmUHABZWXBciXFRZRQ9CCgwXFxgVG1JsQ0QDRD0SEFRAUk1XVkJoC1cMGEpWVVsPQxEMBUoUGgM7QEdSEW9AQlYSU0wGAUFrWgJeShhUDlcSFQFHGkQKSlYUDVIDTkMcV2tCEFVBaUQSVxYESlJRQzxdUlhOSFUNFBZGURkBXFxVXBVpDRQQFw4GTxJAU0ZIXxE+EFxZUjxcWlteElMGQ15TVVsQVR8UTwRpFxIBR2tEF1FHUxkVUxY+CVRaTk1SX1lUDUU9FBRRVUMGVBEMBkoUEQQVG1pCDm9GWF4SRUBbVhkWTwFvRkVSFGkRFQVBURkQVUdpWgdYG08HXVVHF1VBGEQPTAdDXgQBG0FfQVEVXBQhDghAWVUKUWsUG0RFBxBKVkFFEVVdQhkEWg0CD2pXWBZeR0UZCkILPgdaWkQWXVZEFVwHTkMcV2tCEFVBaUQSVxYESkZRQzxdUlhOSFUKABRBUUVNUl9ZVA1FPRQUUVVDBlQRDAZKFBEEFRtXQhFCVlhDSFgXDDtcQFIOQxEMBlcaQBkGakFEBkJsRUMHQgdPF1BAaA5RXU8ZAkMQABBcW1lBCgcYA1cEWlldAQwHVgkDDgVKFBEEFRtXQhFCVlhDSFQODgdea1QMRV1CREheFgwIFw4OTxJLVGgTRQcTO0ZAVhdVHVFSEmkPAApMGkQGQUZTWRJfAw1KRl1NBhIJBAJTGkASAUQaWRZdbF9DA1sRQ14EABtBSFFpQhVTED4XQVVDBh5UU0M5WwMPHRtHXhlVEQwEVwNOQxdQRRkBXFxVXDlVDRQKQUcZC0ReWhVcB1JNRkZRRk1SX1lUDWkLBUYPFlUPX1BdGhAHWCILWUFaAVlSbhwlZS8sSgQEBhsbAWIFVgdVPlYeQE4TVXNFUhdDBw8QXFVbSFJfWVQNdgNQAgwDAAUIVQNWBAIHVl1UBQVQAQAFVl8CBlZTVgNSQRwRRVIXGAEUFkdRWRceUVpYBV09AgtAWkMQHkVTRRJfAQAIFw4GHk0=","applicationID":"3343327","errorBeacon":"bam.nr-data.net","applicationTime":809}</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  
+<title data-base-title="
+ Week 2 Project: Search Algorithms | CSMM.101x Courseware | edX">
+  
+ Week 2 Project: Search Algorithms | Week 2 Project: Search Algorithms | CSMM.101x Courseware | edX
+</title>
+
+
+      <script type="text/javascript">
+        /* immediately break out of an iframe if coming from the marketing website */
+        (function(window) {
+          if (window.location !== window.top.location) {
+            window.top.location = window.location;
+          }
+        })(this);
+      </script>
+
+  
+
+  <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/i18n/en/djangojs.b28203373cc1.js"></script>
+
+  <link rel="icon" type="image/x-icon" href="https://prod-edxapp.edx-cdn.org/static/images/favicon.c074c912999f.ico" />
+
+  
+  
+
+    <link href="https://prod-edxapp.edx-cdn.org/static/edx.org/css/lms-style-vendor.4ccaa7f84216.css" rel="stylesheet" type="text/css" />
+
+
+
+    
+  
+
+    <link href="https://prod-edxapp.edx-cdn.org/static/edx.org/css/lms-main-v1.aceafb07405d.css" rel="stylesheet" type="text/css" />
+
+
+
+
+    
+    <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/edx.org/js/lms-main_vendor.a04b73033169.js" charset="utf-8"></script>
+
+
+    
+    <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/edx.org/js/lms-application.119c31642af0.js" charset="utf-8"></script>
+
+
+
+  
+    
+    
+            
+            <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/bundles/commons.8c711ff2ec13.js" ></script>
+            
+        
+
+
+  <script>
+    window.baseUrl = "https://prod\u002Dedxapp.edx\u002Dcdn.org/static/";
+    (function (require) {
+      require.config({
+          baseUrl: window.baseUrl
+      });
+    }).call(this, require || RequireJS.require);
+  </script>
+  <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/lms/js/require-config.7181341023ea.js"></script>
+  
+    <script type="text/javascript">
+        (function (require) {
+          require.config({
+              paths: {
+                'js/courseware/courseware_factory': 'js/courseware/courseware_factory.1504fc10caef',
+'draggabilly': 'js/vendor/draggabilly.26caba6f7187',
+'js/courseware/toggle_element_visibility': 'js/courseware/toggle_element_visibility.22ad04bb0497',
+'hls': 'common/js/vendor/hls.b10b9ef4015b',
+'js/courseware/link_clicked_events': 'js/courseware/link_clicked_events',
+'moment': 'common/js/vendor/moment-with-locales.084396f4103c',
+'moment-timezone': 'common/js/vendor/moment-timezone-with-data.b062d5eadf09',
+'js/student_account/logistration_factory': 'js/student_account/logistration_factory.22afd1cc049c',
+'js/groups/views/cohorts_dashboard_factory': 'js/groups/views/cohorts_dashboard_factory.8ad700838f0f',
+'js/dateutil_factory': 'js/dateutil_factory.f141a7899e5d',
+'course_bookmarks/js/views/bookmark_button': 'course_bookmarks/js/views/bookmark_button.59e957d21d61',
+'js/courseware/accordion_events': 'js/courseware/accordion_events.6064c7809de5',
+'js/views/message_banner': 'js/views/message_banner.099aec538f98',
+'js/groups/discussions_management/discussions_dashboard_factory': 'js/discussions_management/views/discussions_dashboard_factory.2e10d9097343',
+'js/courseware/course_info_events': 'js/courseware/course_info_events.2fc35b57627f'
+            }
+          });
+        }).call(this, require || RequireJS.require);
+    </script>
+  
+
+    
+    <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/edx.org/js/lms-modules.4d1d6c46c80d.js" charset="utf-8"></script>
+
+
+
+  
+
+  
+
+    <link href="https://prod-edxapp.edx-cdn.org/static/edx.org/css/lms-style-course-vendor.60799ae7d9f8.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+
+    <link href="https://prod-edxapp.edx-cdn.org/static/edx.org/css/lms-course.9e930ac14036.css" rel="stylesheet" type="text/css" />
+
+
+
+
+<script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/jquery.autocomplete.3bd10d7510d2.js"></script>
+<script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/src/tooltip_manager.e3531e99ed92.js"></script>
+
+<link href="https://prod-edxapp.edx-cdn.org/static/css/vendor/jquery.autocomplete.09a0b34739a2.css" rel="stylesheet" type="text/css">
+  <style type='text/css'>
+.xblock-student_view.xblock-student_view-lti_consumer h2.problem-header{display:inline-block}.xblock-student_view.xblock-student_view-lti_consumer div.problem-progress{display:inline-block;padding-left:5px;color:#666;font-weight:100;font-size:1em}.xblock-student_view.xblock-student_view-lti_consumer div.lti_consumer{margin:0 auto}.xblock-student_view.xblock-student_view-lti_consumer div.lti_consumer .wrapper-lti-link{font-size:14px;background-color:#f6f6f6;padding:20px}.xblock-student_view.xblock-student_view-lti_consumer div.lti_consumer .wrapper-lti-link .lti-link{margin-bottom:0;margin-top:20px;text-align:left}.xblock-student_view.xblock-student_view-lti_consumer div.lti_consumer .wrapper-lti-link .lti-link button{font-size:13px;line-height:20.72px}.xblock-student_view.xblock-student_view-lti_consumer div.lti_consumer .lti-modal{position:fixed;opacity:0;z-index:11000;box-sizing:border-box;margin-left:0;height:auto;padding:8px;border-radius:3px;box-shadow:0 0 5px 0 rgba(0,0,0,0.4);background:#464646;color:#3c3c3c}.xblock-student_view.xblock-student_view-lti_consumer div.lti_consumer .lti-modal .close-modal{display:inline-block;position:absolute;right:0px;top:0px;z-index:100;cursor:pointer;padding:10px;background-color:#fff !important;border:none;text-align:center}.xblock-student_view.xblock-student_view-lti_consumer div.lti_consumer .lti-modal .close-modal .fa{font:normal normal normal 14px/1 FontAwesome;font-size:inherit}.xblock-student_view.xblock-student_view-lti_consumer div.lti_consumer .lti-modal .inner-wrapper{height:100%;padding:0 0 0 0}.xblock-student_view.xblock-student_view-lti_consumer div.lti_consumer form.ltiLaunchForm{display:none}.xblock-student_view.xblock-student_view-lti_consumer div.lti_consumer iframe.ltiLaunchFrame{width:100%;height:100%;display:block;border:0px}.xblock-student_view.xblock-student_view-lti_consumer div.lti_consumer h4.problem-feedback-label{font-weight:100;font-size:1em;font-family:"Source Sans", "Open Sans", Verdana, Geneva, sans-serif, sans-serif}.xblock-student_view.xblock-student_view-lti_consumer div.lti_consumer div.problem-feedback{margin-top:5px;margin-bottom:5px}.lean-overlay{background:transparent;background-image:radial-gradient(circle at 50% 30%, rgba(0,0,0,0.4), rgba(0,0,0,0.6));display:none;height:100%;left:0;position:fixed;top:0;width:100%;z-index:100}
+
+</style>
+
+  
+
+  
+
+<script type="text/plain"
+    id="upgrade_user"
+    data-link="https://ecommerce.edx.org/basket/add/?sku=EDE47E7"
+    data-price="$199">
+</script>
+
+  
+
+
+<script type="application/json" id="user-metadata">
+    {"username": "hafidzjazuli", "enrollment_mode": "audit", "upgrade_link": "https://ecommerce.edx.org/basket/add/?sku=EDE47E7", "user_id": 16104109, "course_start": "2017-09-11T04:00:00+00:00", "upgrade_deadline": "2017-12-03T23:59:00+00:00", "course_key_fields": {"org": "ColumbiaX", "run": "2T2017_2", "course": "CSMM.101x"}, "course_end": "2017-12-11T23:30:00+00:00", "pacing_type": "instructor_paced", "upgrade_price": "$199", "course_id": "course-v1:ColumbiaX+CSMM.101x+2T2017_2", "enrollment_time": "2017-10-07T05:06:43+00:00", "schedule_start": null}
+</script>
+
+  
+
+  
+
+<script src=//cdn.optimizely.com/js/1743970571.js></script>
+
+  
+
+
+<!-- begin Segment -->
+<script type="text/javascript">
+  // Asynchronously load Segment's analytics.js library
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+  analytics.load("8fncv13bt5");
+  analytics.page();
+  }}();
+  // Note: user tracking moved to segment-io-footer.html
+</script>
+<!-- end Segment -->
+
+
+  <meta name="path_prefix" content="">
+  <meta name="google-site-verification" content="_mipQ4AtZQDNmbtOkwehQDOgCxUUV2fb_C0b6wbiRHY" />
+
+
+
+</head>
+
+<body class="ltr view-in-course view-courseware courseware  lang_en">
+
+
+<div id="page-prompt"></div>
+  <div class="window-wrap" dir="ltr">
+    <a class="nav-skip sr-only sr-only-focusable" href="#main">Skip to main content</a>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+<header class="header-global slim" aria-label="Main" role="banner">
+
+  <div class=" wrapper-header nav-container">
+    
+
+
+
+
+
+
+<h1 class="hd logo-header navbar-brand">
+  <div class="logo">
+    <a class="navbar-brand" href="/dashboard" itemprop="url">
+      <img class="logo-image" src="https://prod-edxapp.edx-cdn.org/static/edx.org/images/logo.790c9a5340cb.png" alt="edX Home Page" itemprop="logo" />
+    </a>
+  </div>
+    <div class="course-header">
+      <span class="provider">ColumbiaX:</span>
+      <span class="course-number">CSMM.101x</span>
+      <span class="course-name">Artificial Intelligence (AI)</span>
+    </div>
+</h1>
+
+
+
+      
+
+
+
+
+
+    <ol class="user">
+        <li class="primary">
+            <a href="/dashboard" class="user-link">
+                <span class="sr">Dashboard for:</span>
+                <img class="user-image-frame" src="https://d1kekzok76m982.cloudfront.net/prod/9cabefe8e2350cdf3322ba62ec0db2b7_50.jpg?v=1508005662" alt="">
+                <div class="label-username">hafidzjazuli</div>
+            </a>
+        </li>
+        <li class="primary">
+            <div class="user-menu">
+                <button class="user-dropdown" aria-expanded="false" aria-haspopup="true">
+                    <span class="sr">More options</span>
+                    <span class="fa fa-sort-desc" aria-hidden="true"></span>
+                </button>
+                <ul class="user-dropdown-menu" aria-label="More Options" role="menu">
+                    
+                    <li class="dropdown-item item has-block-link"><a href="/dashboard" role="menuitem" class="action dropdown-menuitem">Dashboard</a></li>
+                    <li class="dropdown-item item has-block-link"><a href="/account/settings" role="menuitem" class="action dropdown-menuitem">Account</a></li>
+                
+                    <li class="item"><a href="/logout" role="menuitem" class="user-dropdown-menuitem">Sign Out</a></li>
+                </ul>
+            </div>
+        </li>
+    </ol>
+
+
+      <a href="https://edx.readthedocs.io/projects/edx-guide-for-students/en/latest/index.html"
+         target="_blank"
+         class="doc-link">Help</a>
+
+  </div>
+</header>
+<!--[if lte IE 9]>
+<div class="ie-banner" aria-hidden="true"><strong>Warning:</strong> Your browser is not fully supported. We strongly recommend using <a href="https://www.google.com/chrome" target="_blank">Chrome</a> or <a href="http://www.mozilla.org/firefox" target="_blank">Firefox</a>.</div>
+<![endif]-->
+
+
+
+
+
+
+
+<div class="help-tab">
+  <a href="#help-modal" rel="leanModal" role="button">Support</a>
+</div>
+
+<div id="help-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" tabindex="-1" aria-labelledby="support-platform-name">
+  <div class="inner-wrapper">
+    <button class="btn-link close-modal" tabindex="0">
+      <span class="icon fa fa-remove" aria-hidden="true"></span>
+      <span class="sr">
+        Close
+      </span>
+    </button>
+    <div id="help_wrapper">
+
+        <header>
+          <h2 id="support-platform-name">
+        <span class="edx">edX</span> Support
+          </h2>
+          <hr>
+        </header>
+
+    
+
+        <p>For <strong>questions on course lectures, homework, tools, or materials for this course</strong>, post in the <a href="/courses/course-v1:ColumbiaX+CSMM.101x+2T2017_2/discussion/forum/" target="_blank">course discussion forum</a>.
+        </p>
+
+        <p>Have <strong>general questions about edX</strong>? You can find lots of helpful information in the edX <a href="https://www.edx.org/student-faq" id="feedback-faq-link" target="_blank">FAQ</a>.
+          </p>
+
+        <p>Have a <strong>question about something specific</strong>? You can contact the edX general support team directly:</p>
+        <hr>
+
+        <div class="help-buttons">
+            <button type="button" class="btn btn-outline-primary" id="feedback_link_problem">Report a problem</button>
+            <button type="button" class="btn btn-outline-primary" id="feedback_link_suggestion">Make a suggestion</button>
+            <button type="button" class="btn btn-outline-primary" id="feedback_link_question">Ask a question</button>
+        </div>
+
+        <p class="note">Please note: The edX support team is English speaking. While we will do our best to address your inquiry in any language, our responses will be in English.</p>
+
+    </div>
+
+    <div id="feedback_form_wrapper">
+
+        <header></header>
+
+        <form id="feedback_form" class="feedback_form" method="post" data-remote="true" action="/submit_feedback">
+          <div class="feedback-form-error" aria-live="polite">
+              <div id="feedback_error" class="modal-form-error" tabindex="-1"></div>
+          </div>
+
+          <div class="js-course-id-anchor">
+                  <input name="course_id" type="hidden" value="course-v1:ColumbiaX+CSMM.101x+2T2017_2">
+          </div>
+
+          <label data-field="subject" for="feedback_form_subject">Briefly describe your issue*</label>
+          <input name="subject" type="text" id="feedback_form_subject" required>
+
+          <label data-field="details" for="feedback_form_details">Tell us the details*</label>
+          <span class="tip" id="feedback_form_details_tip">Describe what you were doing when you encountered the issue. Include any details that will help us to troubleshoot, including error messages that you saw.</span>
+          <textarea name="details" id="feedback_form_details" required aria-describedby="feedback_form_details_tip"></textarea>
+
+          <input name="issue_type" type="hidden">
+          <div class="submit">
+            <input name="submit" type="submit" value="Submit" id="feedback_submit">
+          </div>
+        </form>
+    </div>
+
+    <div id="feedback_success_wrapper">
+
+        <header>
+          <h2>Thank You!</h2>
+          <hr>
+        </header>
+
+        <p>
+        Thank you for your inquiry or feedback.  We typically respond to a request within one business day, Monday to Friday.  In the meantime, please review our <a href="https://www.edx.org/student-faq" target="_blank" id="success-feedback-faq-link">detailed FAQs</a> where most questions have already been answered.
+        </p>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    var currentCourseId,
+        courseOptions = [],
+        userAuthenticated = false,
+        courseOptionsLoadInProgress = false,
+        finishedLoadingCourseOptions = false,
+        $helpModal = $("#help-modal"),
+        $closeButton = $("#help-modal .close-modal"),
+        $leanOverlay = $("#lean_overlay"),
+        $feedbackForm = $("#feedback_form"),
+        onModalClose = function() {
+            $closeButton.off("click");
+            $leanOverlay.off("click");
+            $helpModal.attr("aria-hidden", "true");
+            $('area,input,select,textarea,button').removeAttr('tabindex');
+            $(".help-tab a").focus();
+            $leanOverlay.removeAttr('tabindex');
+        },
+        showFeedback = function(event, issue_type, title, subject_label, details_label) {
+            event.preventDefault();
+            DialogTabControls.initializeTabKeyValues("#feedback_form_wrapper", $closeButton);
+            $("#feedback_form input[name='issue_type']").val(issue_type);
+            $("#feedback_form_wrapper header").html("<h2>" + title + "</h2><hr>");
+            $("#feedback_form_wrapper label[data-field='subject']").html(subject_label);
+            $("#feedback_form_wrapper label[data-field='details']").html(details_label);
+            if (userAuthenticated && finishedLoadingCourseOptions && courseOptions.length > 1) {
+                $('.js-course-id-anchor').html([
+                    '<label for="feedback_form_course">' + 'Course' + '</label>',
+                    '<select name="course_id" id="feedback_form_course" class="feedback-form-select">',
+                    courseOptions.join(''),
+                    '</select>'
+                ].join(''));
+            }
+            $("#help_wrapper").css("display", "none");
+            $("#feedback_form_wrapper").css("display", "block");
+            $closeButton.focus();
+        },
+        loadCourseOptions = function() {
+            courseOptionsLoadInProgress = true;
+            $.ajax({
+                url: '/api/enrollment/v1/enrollment',
+                success: function(data) {
+                    var i,
+                        courseDetails,
+                        courseName,
+                        courseId,
+                        option,
+                        defaultOptionText = '\u002D Select \u002D',
+                        markedSelectedOption = false;
+
+                    // Make sure courseOptions is empty before we begin pushing options into it.
+                    courseOptions = [];
+
+                    for (i = 0; i < data.length; i++) {
+                        courseDetails = data[i].course_details;
+                        if (!courseDetails) {
+                            continue;
+                        }
+
+                        courseName = courseDetails.course_name;
+                        courseId = courseDetails.course_id;
+                        if (!(courseName && courseId)) {
+                            continue;
+                        }
+
+                        // Build an option for this course and select it if it's the course we're currently viewing.
+                        if (!markedSelectedOption && courseId === currentCourseId) {
+                            option = buildCourseOption(courseName, courseId, true);
+                            markedSelectedOption = true;
+                        } else {
+                            option = buildCourseOption(courseName, courseId, false);
+                        }
+
+                        courseOptions.push(option);
+                    }
+
+                    // Build the default option and select it if we haven't already selected another option.
+                    option = buildCourseOption(defaultOptionText, '', !markedSelectedOption);
+
+                    // Add the default option to the head of the courseOptions Array.
+                    courseOptions.unshift(option);
+
+                    finishedLoadingCourseOptions = true;
+                },
+                complete: function() {
+                    courseOptionsLoadInProgress = false;
+                }
+            });
+        },
+        buildCourseOption = function(courseName, courseId, selected) {
+            var option = '<option value="' + _.escape(courseId) + '"';
+            if (selected) {
+                option += ' selected';
+            }
+            option += '>' + _.escape(courseName) + '</option>';
+            return option;
+        };
+
+        userAuthenticated = true;
+
+        currentCourseId = "course\u002Dv1:ColumbiaX+CSMM.101x+2T2017_2";
+
+    DialogTabControls.setKeydownListener($helpModal, $closeButton);
+
+    $(".help-tab").click(function() {
+        if (userAuthenticated && !finishedLoadingCourseOptions && !courseOptionsLoadInProgress) {
+            loadCourseOptions();
+        }
+        $helpModal.css("position", "absolute");
+        DialogTabControls.initializeTabKeyValues("#help_wrapper", $closeButton);
+        $(".field-error").removeClass("field-error");
+        $feedbackForm[0].reset();
+        $("#feedback_form input[type='submit']").removeAttr("disabled");
+        $("#feedback_form_wrapper").css("display", "none");
+        $("#feedback_error").css("display", "none");
+        $("#feedback_form_details_tip").css("display", "none");
+        $("#feedback_success_wrapper").css("display", "none");
+        $("#help_wrapper").css("display", "block");
+        $helpModal.attr("aria-hidden", "false");
+        $closeButton.click(onModalClose);
+        $leanOverlay.click(onModalClose);
+        $("button.close-modal").attr('tabindex', 0);
+        $closeButton.focus();
+    });
+
+    $("#feedback_link_problem").click(function(event) {
+        $("#feedback_form_details_tip").css({"display": "block", "padding-bottom": "5px"});
+        showFeedback(
+            event,
+            "problem",
+            "Report a Problem",
+            "Brief description of the problem*" ,
+            "Details of the problem you are encountering*"
+        );
+    });
+    $("#feedback_link_suggestion").click(function(event) {
+        showFeedback(
+            event,
+            "suggestion",
+            "Make a Suggestion",
+            "Brief description of your suggestion*",
+            "Details*"
+        );
+    });
+    $("#feedback_link_question").click(function(event) {
+        showFeedback(
+            event,
+            "question",
+            "Ask a Question",
+            "Brief summary of your question*",
+            "Details*"
+        );
+    });
+    $feedbackForm.submit(function() {
+        $("input[type='submit']", this).attr("disabled", "disabled");
+        $closeButton.focus();
+    });
+    $feedbackForm.on("ajax:complete", function() {
+        $("input[type='submit']", this).removeAttr("disabled");
+    });
+    $feedbackForm.on("ajax:success", function(event, data, status, xhr) {
+        $("#feedback_form_wrapper").css("display", "none");
+        $("#feedback_success_wrapper").css("display", "block");
+        DialogTabControls.initializeTabKeyValues("#feedback_success_wrapper", $closeButton);
+        $closeButton.focus();
+    });
+    $feedbackForm.on("ajax:error", function(event, xhr, status, error) {
+        $(".field-error").removeClass("field-error").removeAttr("aria-invalid");
+        var responseData;
+        try {
+            responseData = jQuery.parseJSON(xhr.responseText);
+        } catch(err) {
+        }
+        if (responseData) {
+            $("[data-field='"+responseData.field+"']").addClass("field-error").attr("aria-invalid", "true");
+            $("#feedback_error").html(responseData.error).stop().css("display", "block");
+        } else {
+            // If no data (or malformed data) is returned, a server error occurred
+            htmlStr = "An error has occurred.";
+            htmlStr += " " + "Please \u003Cbutton type\u003D\u0022button\u0022 id\u003D\u0022feedback_email\u0022\u003Esend us e\u002Dmail\u003C/button\u003E.";
+            $("#feedback_error").html(htmlStr).stop().css("display", "block");
+            $("#feedback_email").click(function(e) {
+                mailto = "mailto:" + "bugs@edx.org" +
+                    "?subject=" + $("#feedback_form input[name='subject']").val() +
+                    "&body=" + $("#feedback_form textarea[name='details']").val();
+                window.open(mailto);
+                e.preventDefault();
+            });
+        }
+        // Make change explicit to assistive technology
+        $("#feedback_error").focus();
+    });
+});
+</script>
+
+
+
+        
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    <div class="content-wrapper  main-container" id="content">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/template" id="image-modal-tpl">
+    <div class="wrapper-modal wrapper-modal-image">
+  <section class="image-link">
+    <%= smallHTML%>
+    <a href="#" class="modal-ui-icon action-fullscreen" role="button">
+      <span class="label">
+        <span class="icon fa fa-arrows-alt fa-large" aria-hidden="true"></span> <%- gettext("Fullscreen") %>
+      </span>
+    </a>
+  </section>
+
+  <section class="image-modal">
+    <section class="image-content">
+      <div class="image-wrapper">
+        <img alt="<%= largeALT %>, <%- gettext('Large') %>" src="<%= largeSRC %>" />
+      </div>
+
+      <a href="#" class="modal-ui-icon action-close" role="button">
+        <span class="label">
+          <span class="icon fa fa-remove fa-large" aria-hidden="true"></span> <%- gettext("Close") %>
+        </span>
+      </a>
+
+      <ul class="image-controls">
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-in" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-plus fa-large" aria-hidden="true"></span> <%- gettext("Zoom In") %>
+            </span>
+          </a>
+        </li>
+
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-out is-disabled" aria-disabled="true" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-minus fa-large" aria-hidden="true"></span> <%- gettext("Zoom Out") %>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </section>
+</div>
+
+</script>
+
+
+
+
+
+
+
+
+<div class="message-banner" aria-live="polite"></div>
+
+  
+
+
+
+
+
+
+
+    
+    <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/edx.org/js/lms-proctoring.b5c10e0f10d3.js" charset="utf-8"></script>
+
+
+        <script type="text/template" id="proctored-exam-status-tpl">
+            <div class="exam-timer">
+    <%
+        function gtLtEscape(str) {
+            return String(str)
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+        }
+    %>
+    <div class='exam-text'>
+        <%= interpolate_text('You are taking "{exam_link}" as a {exam_type} exam. The timer on the right shows the time remaining in the exam.', {exam_link: "<a href='" + exam_url_path + "'>"+gtLtEscape(exam_display_name)+"</a>", exam_type: (!_.isUndefined(arguments[0].exam_type)) ? exam_type : gettext('timed')}) %>
+        <%- gettext('To receive credit for problems, you must select "Submit" for each problem before you select "End My Exam".') %>
+    </div>
+    <div id="turn_in_exam_id" class="pull-right turn_in_exam">
+        <span>
+            <% if(attempt_status !== 'ready_to_submit') {%>
+                <button class="exam-button-turn-in-exam btn btn-pl-primary">
+                    <%- gettext("End My Exam") %>
+                </button>
+            <% } %>
+        </span>
+        <span class="sr timer-announce" aria-live="assertive"></span>
+        <span id="time_remaining_id">
+            <b>
+            </b>
+        </span>
+    </div>
+</div>
+
+        </script>
+    <div class="proctored_exam_status"></div>
+
+    
+        <nav class="courseware wrapper-course-material" aria-label="Course Material">
+            <div class="course-material">
+                
+                <ol class="tabs course-tabs">
+                    
+
+
+
+
+
+  
+  <li class="tab">
+  <a href="/courses/course-v1:ColumbiaX+CSMM.101x+2T2017_2/course/" class="active">
+  Course
+      <span class="sr">, current location</span>
+  </a>
+  </li>
+  
+  <li class="tab">
+  <a href="/courses/course-v1:ColumbiaX+CSMM.101x+2T2017_2/discussion/forum/" class="">
+  Discussion
+  </a>
+  </li>
+  
+  <li class="tab">
+  <a href="/courses/course-v1:ColumbiaX+CSMM.101x+2T2017_2/progress" class="">
+  Progress
+  </a>
+  </li>
+
+                    
+                </ol>
+            </div>
+        </nav>
+
+
+<div class="container"
+    lang="en"
+  >
+  <div class="course-wrapper" role="presentation">
+
+    <section class="course-content" id="course-content">
+        <header class="page-header has-secondary">
+            <div class="page-header-main">
+                <nav aria-label="Course" class="sr-is-focusable" tabindex="-1">
+                    <div class="has-breadcrumbs">
+                        <div class="breadcrumbs">
+                                <span class="nav-item nav-item-course">
+                                    <a href="/courses/course-v1:ColumbiaX+CSMM.101x+2T2017_2/course/">Course</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-chapter">
+                                    <a href="/courses/course-v1:ColumbiaX+CSMM.101x+2T2017_2/course/#block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@chapter+block@ea3118a1b62849b99423f8b1182e1bbf">Week 2: Intelligent Agents and Uninformed Search</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-section">
+                                    <a href="/courses/course-v1:ColumbiaX+CSMM.101x+2T2017_2/course/#block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@sequential+block@a1f977f8f5ab4e79a123133a94d77c7e">Week 2 Project: Search Algorithms</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                            <span class="nav-item nav-item-sequence">Week 2 Project: Search Algorithms</span>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main" tabindex="-1" aria-label="Content">
+
+              <div class="xblock xblock-student_view xblock-student_view-sequential xmodule_display xmodule_SequenceModule" data-runtime-class="LmsRuntime" data-init="XBlockToXModuleShim" data-block-type="sequential" data-request-token="459e1960b79d11e79eb00aba30487072" data-runtime-version="1" data-usage-id="block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@sequential+block@a1f977f8f5ab4e79a123133a94d77c7e" data-type="Sequence" data-course-id="course-v1:ColumbiaX+CSMM.101x+2T2017_2">
+  <script type="json/xblock-args" class="xblock-json-init-args">
+    {"xmodule-type": "Sequence"}
+  </script>
+  
+
+
+<div id="sequence_a1f977f8f5ab4e79a123133a94d77c7e" class="sequence" data-id="block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@sequential+block@a1f977f8f5ab4e79a123133a94d77c7e" data-position="1" data-ajax-url="/courses/course-v1:ColumbiaX+CSMM.101x+2T2017_2/xblock/block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@sequential+block@a1f977f8f5ab4e79a123133a94d77c7e/handler/xmodule_handler" data-next-url="/courses/course-v1:ColumbiaX+CSMM.101x+2T2017_2/courseware/ea3118a1b62849b99423f8b1182e1bbf/6666f74ec1a74dacbb0afb61b16a4a02/?child=first" data-prev-url="/courses/course-v1:ColumbiaX+CSMM.101x+2T2017_2/courseware/ea3118a1b62849b99423f8b1182e1bbf/1a38850a440640c4b8aabb5ecca531d6/?child=last">
+  <div class="sequence-nav">
+    <button class="sequence-nav-button button-previous" aria-hidden="true">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span>Previous</span>
+    </button>
+    <nav class="sequence-list-wrapper" aria-label="Sequence">
+      <ol id="sequence-list" role="tablist">
+        <li>
+        <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="0"
+            data-id="block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@vertical+block@452174b453a84c2a85f61a5dde428993"
+            data-element="1"
+            data-page-title="Week 2 Project: Search Algorithms"
+            data-path="Week 2: Intelligent Agents and Uninformed Search &gt; Week 2 Project: Search Algorithms &gt; Week 2 Project: Search Algorithms"
+            id="tab_0">
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Week 2 Project: Search Algorithms<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li>
+        <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="1"
+            data-id="block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@vertical+block@ea497a813e3a43f59c9228a3ada87950"
+            data-element="2"
+            data-page-title="Week 2 Project: Implementation FAQs"
+            data-path="Week 2: Intelligent Agents and Uninformed Search &gt; Week 2 Project: Search Algorithms &gt; Week 2 Project: Implementation FAQs"
+            id="tab_1">
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Week 2 Project: Implementation FAQs<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+      </ol>
+    </nav>
+    <button class="sequence-nav-button button-next" aria-hidden="true">
+      <span>Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <div class="sr-is-focusable" tabindex="-1"></div>
+
+  <div id="seq_contents_0"
+    aria-labelledby="tab_0"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:ColumbiaX+CSMM.101x+2T2017_2&#34; data-request-token=&#34;459e1960b79d11e79eb00aba30487072&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@vertical+block@452174b453a84c2a85f61a5dde428993&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Week 2 Project: Search Algorithms&lt;/h2&gt;
+
+    
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;hafidzjazuli,block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@vertical+block@452174b453a84c2a85f61a5dde428993&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@html+block@9a9f5ec0f91d49a197da5f0b71a34d2b&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;459e1960b79d11e79eb00aba30487072&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@html+block@9a9f5ec0f91d49a197da5f0b71a34d2b&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:ColumbiaX+CSMM.101x+2T2017_2&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h3&gt;&lt;span style=&#34;color: #ff0000; font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;strong&gt;ACADEMIC HONESTY&lt;/strong&gt;&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino; color: #000000;&#34;&gt;As usual, the standard honor code and academic honesty policy applies. We will be using automated &lt;strong&gt;plagiarism detection&lt;/strong&gt; software to ensure that only original work is given credit. Submissions isomorphic to (1) those that exist anywhere online, (2) those submitted by&amp;nbsp;your classmates, or (3) those submitted by students in prior semesters, will be detected and considered plagiarism.&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;div class=&#34;vert vert-1&#34; data-id=&#34;block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@html+block@d9283829a94845dfab8d9a92ca667487&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;459e1960b79d11e79eb00aba30487072&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@html+block@d9283829a94845dfab8d9a92ca667487&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:ColumbiaX+CSMM.101x+2T2017_2&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h3&gt;&lt;span style=&#34;color: #ff0000;&#34;&gt;&lt;strong&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;INSTRUCTIONS&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;span style=&#34;color: #ff0000;&#34;&gt;&lt;span style=&#34;color: #333333;&#34;&gt;&lt;span style=&#34;color: #000000;&#34;&gt;In this assignment you will create an agent to solve the 8&lt;b&gt;-puzzle&lt;/b&gt; game. You may visit&lt;/span&gt; &lt;strong&gt;&lt;a href=&#34;http://mypuzzle.org/sliding&#34; target=&#34;[object Object]&#34;&gt;mypuzzle.org/sliding&lt;/a&gt;&lt;/strong&gt;&amp;nbsp;&lt;span style=&#34;color: #000000;&#34;&gt;for a refresher of the rules of the game. You will implement and compare several search algorithms and collect some statistics related to their performances. Please read all sections of&amp;nbsp;the&amp;nbsp;instructions carefully:&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;padding-left: 30px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino; color: #000000;&#34;&gt;&lt;strong&gt;I.&lt;/strong&gt; Introduction&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino; color: #000000;&#34;&gt;&lt;strong&gt;II.&lt;/strong&gt; Algorithm&amp;nbsp;Review&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino; color: #000000;&#34;&gt;&lt;strong&gt;III.&lt;/strong&gt; What You Need To Submit&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino; color: #000000;&#34;&gt;&lt;strong&gt;IV.&lt;/strong&gt; What Your Program Outputs&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino; color: #000000;&#34;&gt;&lt;strong&gt;V.&lt;/strong&gt; Important Information&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino; color: #000000;&#34;&gt;&lt;strong&gt;VI.&lt;/strong&gt; Before You&amp;nbsp;Finish&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;span style=&#34;color: #000000;&#34;&gt;&lt;strong&gt;NOTE&lt;/strong&gt;: This project incorporates material learned from both &lt;strong&gt;Week 2&lt;/strong&gt; (uninformed search) and &lt;strong&gt;Week 3&lt;/strong&gt; (informed search). Since this project involves a fair amount of programming and design, we are releasing&amp;nbsp;it now to let you get started earlier. In particular, do not worry if&amp;nbsp;certain concepts (e.g. heuristics, A-Star, etc.) are not familiar at this point; you will understand everything you need to know by Week 3.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;div class=&#34;vert vert-2&#34; data-id=&#34;block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@html+block@23e8b05e66b34d66bed60c1bbd214c59&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;459e1960b79d11e79eb00aba30487072&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@html+block@23e8b05e66b34d66bed60c1bbd214c59&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:ColumbiaX+CSMM.101x+2T2017_2&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h3&gt;&lt;span style=&#34;color: #000000;&#34;&gt;&lt;strong&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;I.&amp;nbsp;Introduction&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/h3&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke-color: #000000; -webkit-text-stroke-width: initial; min-height: 19px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke-color: #000000; -webkit-text-stroke-width: initial; min-height: 19px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;An instance of the N-puzzle game consists of a &lt;b&gt;board&lt;/b&gt; holding N = m^2 &amp;minus; 1 (m = 3, 4, 5, ...) distinct movable tiles, plus an empty space. The tiles are numbers from the set {1, &amp;hellip;, m^2 &amp;minus; 1}. For any such board, the empty space may be legally swapped with any tile horizontally or vertically adjacent to it. In this assignment, we will represent the blank space with the number 0 and focus on the m = 3 case (8-puzzle).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000;&#34;&gt;&lt;span style=&#34;color: #000000; font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;Given an initial &lt;b&gt;state&lt;/b&gt; of the board, the combinatorial search problem is to find a sequence of moves that transitions this state to the goal state; that is, the configuration with all tiles arranged in ascending order ⟨0, 1, &amp;hellip;, m^2 &amp;minus; 1⟩. The search space is the set of all possible states reachable from the initial state.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000;&#34;&gt;&lt;span style=&#34;color: #000000; font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;The blank space may be swapped with a component in one of the four directions {&amp;lsquo;Up&amp;rsquo;, &amp;lsquo;Down&amp;rsquo;, &amp;lsquo;Left&amp;rsquo;, &amp;lsquo;Right&amp;rsquo;}, one move at a time. The cost of moving from one configuration of the board to another is the same and equal to one. Thus, the total cost of path is equal to the number of moves made from the initial state to the goal state.&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;div class=&#34;vert vert-3&#34; data-id=&#34;block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@html+block@1df9ef1b1a2945d4bd6ea4458893f463&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;459e1960b79d11e79eb00aba30487072&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@html+block@1df9ef1b1a2945d4bd6ea4458893f463&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:ColumbiaX+CSMM.101x+2T2017_2&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h3&gt;&lt;span style=&#34;color: #000000;&#34;&gt;&lt;strong&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;II.&amp;nbsp;Algorithm Review&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/h3&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke-color: #000000; -webkit-text-stroke-width: initial; min-height: 19px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke-color: #000000; -webkit-text-stroke-width: initial; min-height: 19px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;Recall from the lectures that searches begin by visiting the root node of the search tree, given by the initial state. Among other book-keeping details,&amp;nbsp;three major&amp;nbsp;things happen in sequence in order to&amp;nbsp;visit a node:&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;First, we &lt;b style=&#34;font-family: &#39;book antiqua&#39;, palatino; color: #000000; -webkit-text-stroke-width: initial;&#34;&gt;remove&lt;/b&gt;&lt;span style=&#34;color: #000000; -webkit-text-stroke-width: initial;&#34;&gt; a node from the frontier set.&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;span style=&#34;color: #000000; -webkit-text-stroke-width: initial;&#34;&gt;Second, we &lt;/span&gt;&lt;b style=&#34;font-family: &#39;book antiqua&#39;, palatino; color: #000000; -webkit-text-stroke-width: initial;&#34;&gt;check&lt;/b&gt;&lt;span style=&#34;color: #000000; -webkit-text-stroke-width: initial;&#34;&gt; the state against the goal state to determine if a solution has been found.&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;span style=&#34;color: #000000; -webkit-text-stroke-width: initial;&#34;&gt;Finally, if the result of the check is negative, we then &lt;/span&gt;&lt;b style=&#34;font-family: &#39;book antiqua&#39;, palatino; color: #000000; -webkit-text-stroke-width: initial;&#34;&gt;expand&lt;/b&gt;&lt;span style=&#34;color: #000000; -webkit-text-stroke-width: initial;&#34;&gt; the node. To expand a given node, we generate successor nodes adjacent to the current node, and add them to the frontier set. Note that if these successor nodes are already in the frontier, or have already been visited, then they should &lt;span style=&#34;text-decoration: underline;&#34;&gt;not&lt;/span&gt;&amp;nbsp;be added to the&amp;nbsp;frontier again.&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;This describes the life-cycle of a visit, and is the basic order of operations for search agents in this assignment&amp;mdash;(1) remove, (2) check, and (3) expand.&amp;nbsp;In this assignment, we will implement algorithms as described here. Please refer to lecture notes for further details, and review the lecture pseudocode before you begin the assignment.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;span style=&#34;color: #3c3c3c;&#34;&gt;&lt;span style=&#34;color: #ff0000;&#34;&gt;&lt;strong&gt;IMPORTANT&lt;/strong&gt;&lt;/span&gt;:&amp;nbsp;&lt;/span&gt;Note that you may encounter implementations elsewhere that attempt to short-circuit this order by performing the goal-check on successor nodes immediately upon expansion of a parent node. For example, Russell &amp;amp; Norvig&#39;s implementation of breadth-first search&amp;nbsp;does precisely this. Doing so may lead to edge-case gains in efficiency, but do not alter the general characteristics of complexity and optimality for each method. For simplicity and grading purposes&amp;nbsp;in this assignment, &lt;strong&gt;do&amp;nbsp;not make such modifications to algorithms learned in lecture&lt;/strong&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;div class=&#34;vert vert-4&#34; data-id=&#34;block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@html+block@f245c383178a4651b47efc655bb7d27a&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;459e1960b79d11e79eb00aba30487072&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@html+block@f245c383178a4651b47efc655bb7d27a&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:ColumbiaX+CSMM.101x+2T2017_2&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h3&gt;&lt;span style=&#34;color: #000000;&#34;&gt;&lt;strong&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;III.&amp;nbsp;What You Need To Submit&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/h3&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke-color: #000000; -webkit-text-stroke-width: initial; min-height: 19px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000;&#34;&gt;&lt;span style=&#34;font-kerning: none; font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;Your job in this assignment is to write &lt;/span&gt;&lt;span style=&#34;line-height: normal; font-family: &#39;Courier New&#39;; color: #0000ff;&#34;&gt;driver.py&lt;/span&gt;&lt;span style=&#34;font-kerning: none; font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;, which solves any 8-puzzle board when given an arbitrary starting configuration. The program will be executed as follows:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: &#39;Courier New&#39;; color: #000000; -webkit-text-stroke: #000000; padding-left: 30px;&#34;&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;$ python driver.py &amp;lt;method&amp;gt; &amp;lt;board&amp;gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;The method argument will be one of the following. You need to implement all three of them:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; padding-left: 30px;&#34;&gt;&lt;span style=&#34;line-height: normal; font-family: &#39;Courier New&#39;; color: #0000ff;&#34;&gt;bfs&lt;/span&gt;&lt;span style=&#34;font-kerning: none; font-family: &#39;book antiqua&#39;, palatino;&#34;&gt; (Breadth-First Search)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; padding-left: 30px;&#34;&gt;&lt;span style=&#34;line-height: normal; font-family: &#39;Courier New&#39;; color: #0000ff;&#34;&gt;dfs&lt;/span&gt;&lt;span style=&#34;font-kerning: none; font-family: &#39;book antiqua&#39;, palatino;&#34;&gt; (Depth-First Search)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; padding-left: 30px;&#34;&gt;&lt;span style=&#34;line-height: normal; font-family: &#39;Courier New&#39;; color: #0000ff;&#34;&gt;ast&lt;/span&gt;&lt;span style=&#34;font-kerning: none; font-family: &#39;book antiqua&#39;, palatino;&#34;&gt; (A-Star Search)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;The board argument will be a comma-separated list of integers containing no spaces. For example, to use the bread-first search strategy to solve the input board given by the starting configuration {0,8,7,6,5,4,3,2,1}, the program will be executed like so (with no spaces between commas):&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: &#39;Courier New&#39;; color: #000000; -webkit-text-stroke: #000000; padding-left: 30px;&#34;&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;$ python driver.py bfs 0,8,7,6,5,4,3,2,1&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;span style=&#34;color: #3c3c3c;&#34;&gt;&lt;span style=&#34;color: #ff0000;&#34;&gt;&lt;strong&gt;IMPORTANT&lt;/strong&gt;&lt;/span&gt;:&amp;nbsp;If you are using Python 3, please name your file&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;line-height: normal; font-family: &#39;Courier New&#39;; color: #0000ff;&#34;&gt;driver_3.py&lt;/span&gt;&lt;span style=&#34;font-kerning: none; font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;, which will alert&amp;nbsp;the grader to use the correct version of Python during submission and grading. If you name your file&amp;nbsp;&lt;/span&gt;&lt;span style=&#34;color: #0000ff; font-family: &#39;Courier New&#39;;&#34;&gt;driver.py&lt;/span&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino; -webkit-text-stroke-width: initial;&#34;&gt;, the default version for our box is Python 2.&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;div class=&#34;vert vert-5&#34; data-id=&#34;block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@html+block@478d0282e6f14e009cebc57ff20ae2a5&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;459e1960b79d11e79eb00aba30487072&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@html+block@478d0282e6f14e009cebc57ff20ae2a5&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:ColumbiaX+CSMM.101x+2T2017_2&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h3&gt;&lt;span style=&#34;color: #000000;&#34;&gt;&lt;strong&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;IV.&amp;nbsp;What Your Program Outputs&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/h3&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke-color: #000000; -webkit-text-stroke-width: initial; min-height: 19px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;span style=&#34;font-kerning: none;&#34;&gt;When executed, your program will create / write to a file called&amp;nbsp;&lt;/span&gt;&lt;span style=&#34;font-kerning: none;&#34;&gt;&lt;span style=&#34;color: #0000ff; font-family: &#39;Courier New&#39;;&#34;&gt;output.txt&lt;/span&gt;, containing the following statistics:&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; padding-left: 30px;&#34;&gt;&lt;span style=&#34;line-height: normal; font-family: &#39;Courier New&#39;; color: #0000ff;&#34;&gt;path_to_goal&lt;/span&gt;&lt;span style=&#34;font-kerning: none; font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;: the sequence of moves taken to reach the goal&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; padding-left: 30px;&#34;&gt;&lt;span style=&#34;line-height: normal; font-family: &#39;Courier New&#39;; color: #0000ff;&#34;&gt;cost_of_path&lt;/span&gt;&lt;span style=&#34;font-kerning: none; font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;: the number of moves taken to reach the goal&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; padding-left: 30px;&#34;&gt;&lt;span style=&#34;line-height: normal; font-family: &#39;Courier New&#39;; color: #0000ff;&#34;&gt;nodes_expanded&lt;/span&gt;&lt;span style=&#34;font-kerning: none; font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;: the number of nodes that have been expanded&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; padding-left: 30px;&#34;&gt;&lt;span style=&#34;line-height: normal; font-family: &#39;Courier New&#39;; color: #0000ff;&#34;&gt;search_depth&lt;/span&gt;&lt;span style=&#34;font-kerning: none; font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;: the depth within the search tree&amp;nbsp;when the goal node is&amp;nbsp;found&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; padding-left: 30px;&#34;&gt;&lt;span style=&#34;line-height: normal; font-family: &#39;Courier New&#39;; color: #0000ff;&#34;&gt;max_search_depth&lt;/span&gt;&lt;span style=&#34;font-kerning: none; font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;:&amp;nbsp; the maximum depth&amp;nbsp;of the search tree in the lifetime of the algorithm&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; padding-left: 30px;&#34;&gt;&lt;span style=&#34;line-height: normal; font-family: &#39;Courier New&#39;; color: #0000ff;&#34;&gt;running_time&lt;/span&gt;&lt;span style=&#34;font-kerning: none; font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;: the total running time of the search instance, reported in seconds&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; padding-left: 30px;&#34;&gt;&lt;span style=&#34;line-height: normal; font-family: &#39;Courier New&#39;; color: #0000ff;&#34;&gt;max_ram_usage&lt;/span&gt;&lt;span style=&#34;font-kerning: none; font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;: the maximum RAM usage in the lifetime of the process as measured by the &lt;strong&gt;ru_maxrss&lt;/strong&gt; attribute in the &lt;strong&gt;resource&lt;/strong&gt; module, reported in megabytes&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px;&#34;&gt;&lt;span style=&#34;color: #ff0000;&#34;&gt;&lt;strong&gt;&lt;span face=&#34;book antiqua, palatino&#34; style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;Example #1:&amp;nbsp;Breadth-First Search&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px; padding-left: 30px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;Suppose&amp;nbsp;the program is executed for breadth-first search as follows:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px; padding-left: 30px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: &#39;Courier New&#39;; color: #000000; -webkit-text-stroke: #000000; padding-left: 60px;&#34;&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;$ python driver.py bfs 1,2,5,3,4,0,6,7,8&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px; padding-left: 30px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; padding-left: 30px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;Which&amp;nbsp;should lead to the following solution&amp;nbsp;to the input board:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px; padding-left: 30px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; padding-left: 60px;&#34;&gt;&lt;img src=&#34;https://studio.edx.org/asset-v1:ColumbiaX+CSMM.101x+1T2017+type@asset+block@pset1_diagram.png&#34; type=&#34;saveimage&#34; target=&#34;[object Object]&#34; width=&#34;400&#34; /&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; padding-left: 60px;&#34;&gt;&lt;span style=&#34;color: #ffffff;&#34;&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; padding-left: 30px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;The output file (&lt;a href=&#34;https://courses.edx.org/asset-v1:ColumbiaX+CSMM.101x+2T2017+type@asset+block@bfs_ex_.txt&#34; target=&#34;[object Object]&#34;&gt;example&lt;/a&gt;) will contain &lt;span style=&#34;color: #000000;&#34;&gt;&lt;strong&gt;exactly&lt;/strong&gt;&lt;/span&gt; the following lines&lt;/span&gt;&lt;span style=&#34;-webkit-text-stroke-width: initial; font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px; padding-left: 30px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: &#39;Courier New&#39;; color: #000000; -webkit-text-stroke: #000000; padding-left: 60px;&#34;&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;path_to_goal: [&#39;Up&#39;, &#39;Left&#39;, &#39;Left&#39;]&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: &#39;Courier New&#39;; color: #000000; -webkit-text-stroke: #000000; padding-left: 60px;&#34;&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;cost_of_path: 3&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: &#39;Courier New&#39;; color: #000000; -webkit-text-stroke: #000000; padding-left: 60px;&#34;&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;nodes_expanded: 10&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: &#39;Courier New&#39;; color: #000000; -webkit-text-stroke: #000000; padding-left: 60px;&#34;&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;search_depth: 3&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: &#39;Courier New&#39;; color: #000000; -webkit-text-stroke: #000000; padding-left: 60px;&#34;&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;max_search_depth: 4&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: &#39;Courier New&#39;; color: #000000; -webkit-text-stroke: #000000; padding-left: 60px;&#34;&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;running_time: 0.00188088&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: &#39;Courier New&#39;; color: #000000; -webkit-text-stroke: #000000; padding-left: 60px;&#34;&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;max_ram_usage: 0.07812500&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000;&#34;&gt;&lt;span style=&#34;color: #ffffff;&#34;&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;strong style=&#34;color: #ff0000; font-family: Helvetica;&#34;&gt;&lt;span face=&#34;book antiqua, palatino&#34; style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;Example #2: Depth-First Search&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000;&#34;&gt;&lt;span style=&#34;color: #ffffff;&#34;&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; padding-left: 30px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;Suppose the program is executed for depth-first search as follows:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px; padding-left: 30px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: &#39;Courier New&#39;; color: #000000; -webkit-text-stroke: #000000; padding-left: 60px;&#34;&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;$ python driver.py dfs 1,2,5,3,4,0,6,7,8&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px; padding-left: 30px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; padding-left: 30px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;Which&amp;nbsp;should lead to the following solution&amp;nbsp;to the input board:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px; padding-left: 30px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; padding-left: 60px;&#34;&gt;&lt;img src=&#34;https://studio.edx.org/asset-v1:ColumbiaX+CSMM.101x+1T2017+type@asset+block@pset1_diagram.png&#34; type=&#34;saveimage&#34; target=&#34;[object Object]&#34; width=&#34;400&#34; /&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; padding-left: 60px;&#34;&gt;&lt;span style=&#34;color: #ffffff;&#34;&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; padding-left: 30px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;The output file (&lt;a href=&#34;https://courses.edx.org/asset-v1:ColumbiaX+CSMM.101x+2T2017+type@asset+block@dfs_ex_.txt&#34; target=&#34;[object Object]&#34;&gt;example&lt;/a&gt;) will contain&amp;nbsp;&lt;span&gt;&lt;strong&gt;exactly&lt;/strong&gt;&lt;/span&gt;&amp;nbsp;the following lines&lt;/span&gt;&lt;span style=&#34;-webkit-text-stroke-width: initial; font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px; padding-left: 30px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: &#39;Courier New&#39;; color: #000000; -webkit-text-stroke: #000000; padding-left: 60px;&#34;&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;path_to_goal: [&#39;Up&#39;, &#39;Left&#39;, &#39;Left&#39;]&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: &#39;Courier New&#39;; color: #000000; -webkit-text-stroke: #000000; padding-left: 60px;&#34;&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;cost_of_path: 3&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: &#39;Courier New&#39;; color: #000000; -webkit-text-stroke: #000000; padding-left: 60px;&#34;&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;nodes_expanded: 181437&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: &#39;Courier New&#39;; color: #000000; -webkit-text-stroke: #000000; padding-left: 60px;&#34;&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;search_depth: 3&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: &#39;Courier New&#39;; color: #000000; -webkit-text-stroke: #000000; padding-left: 60px;&#34;&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;max_search_depth: 66125&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: &#39;Courier New&#39;; color: #000000; -webkit-text-stroke: #000000; padding-left: 60px;&#34;&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;running_time: 5.01608433&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: &#39;Courier New&#39;; color: #000000; -webkit-text-stroke: #000000; padding-left: 60px;&#34;&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;max_ram_usage: 4.23940217&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000;&#34;&gt;&lt;span style=&#34;color: #ffffff;&#34;&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; padding-left: 30px;&#34;&gt;&lt;span face=&#34;book antiqua, palatino&#34; style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;Other test cases are available on&amp;nbsp;&lt;strong&gt;Week 2 Project: Implementation FAQs&lt;/strong&gt; page.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000;&#34;&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;strong style=&#34;color: #ff0000; font-family: Helvetica;&#34;&gt;&lt;span face=&#34;book antiqua, palatino&#34; style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;Note on Correctness&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000;&#34;&gt;&lt;span style=&#34;color: #ffffff;&#34;&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; padding-left: 30px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;Of course, the specific values for&amp;nbsp;&lt;/span&gt;&lt;span style=&#34;color: #0000ff; font-family: &#39;Courier New&#39;;&#34;&gt;running_time&lt;/span&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino; -webkit-text-stroke-width: initial;&#34;&gt;&amp;nbsp;and&amp;nbsp;&lt;/span&gt;&lt;span style=&#34;color: #0000ff; font-family: &#39;Courier New&#39;;&#34;&gt;max_ram_usage&lt;/span&gt;&lt;span style=&#34;-webkit-text-stroke-width: initial; font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&amp;nbsp;variables&amp;nbsp;will&lt;/span&gt;&lt;span style=&#34;-webkit-text-stroke-width: initial; font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&amp;nbsp;vary greatly depending on the machine &lt;/span&gt;&lt;span style=&#34;-webkit-text-stroke-width: initial; font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;used and the specific implementation details; there is no &#34;correct&#34; value to look for. They are intended to enable you to check the time and space complexity characteristics of your code, and you should spend time to do so. All the&amp;nbsp;other variables, however, will have &lt;strong&gt;&lt;span style=&#34;color: #000000;&#34;&gt;one and only one&lt;/span&gt;&lt;/strong&gt; correct answer for&amp;nbsp;each algorithm and initial board specified in the sample&amp;nbsp;test cases.&lt;strong&gt;*&lt;/strong&gt; A good way to check the correctness of your&amp;nbsp;program is to walk through small&amp;nbsp;examples by hand, like the ones above.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; padding-left: 30px;&#34;&gt;&lt;span style=&#34;color: #ffffff;&#34;&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; padding-left: 30px;&#34;&gt;&lt;span style=&#34;-webkit-text-stroke-width: initial; font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;strong&gt;*&lt;/strong&gt;&amp;nbsp;In general, &lt;strong&gt;for any initial board whatsoever&lt;/strong&gt;, for BFS and DFS there is one and only one correct answer. For A*, however, your&amp;nbsp;output of&amp;nbsp;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier; color: #0000ff;&#34;&gt;nodes_expanded&lt;/span&gt;&amp;nbsp;may vary a little, depending on specific implementation details. You will be fine as long as your algorithm conforms to all&amp;nbsp;&lt;strong&gt;specifications&lt;/strong&gt;&amp;nbsp;listed in these instructions.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;div class=&#34;vert vert-6&#34; data-id=&#34;block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@html+block@471a35658a2c40ea87fe4c70427e7453&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;459e1960b79d11e79eb00aba30487072&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@html+block@471a35658a2c40ea87fe4c70427e7453&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:ColumbiaX+CSMM.101x+2T2017_2&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h3&gt;&lt;span style=&#34;color: #000000;&#34;&gt;&lt;strong&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;V.&amp;nbsp;Important Information&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/h3&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke-color: #000000; -webkit-text-stroke-width: initial; min-height: 19px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px;&#34;&gt;&lt;span style=&#34;color: #000000;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;span style=&#34;-webkit-text-stroke-width: initial;&#34;&gt;Please read the following information carefully. Since this is the first programming project, we are providing many hints and explicit instructions.&amp;nbsp;Before you post&amp;nbsp;a clarifying question on the discussion board, make sure that your question is not already answered in the following sections.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px;&#34;&gt;&lt;strong style=&#34;color: #ff0000;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;span style=&#34;-webkit-text-stroke-width: initial;&#34;&gt;1.&amp;nbsp;Implementation&lt;/span&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px; padding-left: 30px;&#34;&gt;&lt;span style=&#34;-webkit-text-stroke-width: initial; font-family: &#39;book antiqua&#39;, palatino; color: #000000;&#34;&gt;You will implement the following three&amp;nbsp;algorithms as demonstrated in lecture. In particular:&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino; color: #000000;&#34;&gt;&lt;strong style=&#34;font-family: &#39;book antiqua&#39;, palatino; color: #000000; -webkit-text-stroke: #000000;&#34;&gt;Breadth-First Search&lt;/strong&gt;&lt;span style=&#34;font-size: 1em; -webkit-text-stroke-width: initial;&#34;&gt;. Use an explicit queue, as shown in lecture.&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino; color: #000000;&#34;&gt;&lt;strong style=&#34;font-family: &#39;book antiqua&#39;, palatino; color: #000000; -webkit-text-stroke: #000000;&#34;&gt;Depth-First Search&lt;/strong&gt;&lt;span style=&#34;font-size: 1em; -webkit-text-stroke-width: initial;&#34;&gt;. Use an explicit stack, as shown in lecture.&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino; color: #000000;&#34;&gt;&lt;strong style=&#34;font-family: &#39;book antiqua&#39;, palatino; color: #000000; -webkit-text-stroke: #000000;&#34;&gt;A-Star Search&lt;/strong&gt;&lt;span style=&#34;font-size: 1em; -webkit-text-stroke-width: initial;&#34;&gt;. Use a priority queue, as shown in lecture. For&lt;/span&gt;&lt;span style=&#34;font-size: 1em; -webkit-text-stroke-width: initial;&#34;&gt;&amp;nbsp;the choice of heuristic, use the &lt;/span&gt;&lt;span style=&#34;font-size: 1em; -webkit-text-stroke: #000000;&#34;&gt;Manhattan&lt;/span&gt;&lt;span style=&#34;font-size: 1em; -webkit-text-stroke-width: initial;&#34;&gt; priority function; that is, the sum of the distances of the tiles from their goal positions. Note that the blanks space is not considered an actual tile here.&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px;&#34;&gt;&lt;span style=&#34;color: #ff0000;&#34;&gt;&lt;strong&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;span style=&#34;-webkit-text-stroke-width: initial;&#34;&gt;2. Order of Visits&lt;/span&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-size: 16px; line-height: normal; font-family: Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 19px; padding-left: 30px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;span style=&#34;-webkit-text-stroke-width: initial;&#34;&gt;In this assignment, where an arbitrary choice must be made, we always &lt;/span&gt;&lt;strong style=&#34;-webkit-text-stroke-width: initial;&#34;&gt;visit&lt;/strong&gt;&lt;span style=&#34;-webkit-text-stroke-width: initial;&#34;&gt; child nodes in the &#34;&lt;/span&gt;&lt;strong style=&#34;-webkit-text-stroke-width: initial;&#34;&gt;UDLR&lt;/strong&gt;&lt;span style=&#34;-webkit-text-stroke-width: initial;&#34;&gt;&#34; order; that is, [&amp;lsquo;Up&amp;rsquo;, &amp;lsquo;Down&amp;rsquo;, &amp;lsquo;Left&amp;rsquo;, &amp;lsquo;Right&amp;rsquo;] in that exact order. Specifically:&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino; color: #000000;&#34;&gt;&lt;strong style=&#34;-webkit-text-stroke: #000000;&#34;&gt;Breadth-First Search&lt;/strong&gt;&lt;span style=&#34;font-size: 1em; -webkit-text-stroke-width: initial;&#34;&gt;. Enqueue in UDLR order; dequeuing results in&amp;nbsp;UDLR order.&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino; color: #000000;&#34;&gt;&lt;span style=&#34;font-size: 1em; -webkit-text-stroke-width: initial;&#34;&gt;&lt;strong style=&#34;-webkit-text-stroke: #000000;&#34;&gt;Depth-First Search&lt;/strong&gt;&lt;span style=&#34;font-size: 1em; -webkit-text-stroke-width: initial;&#34;&gt;.&amp;nbsp;Push onto the stack in reverse-UDLR order; popping off results in UDLR order.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino; color: #000000;&#34;&gt;&lt;span style=&#34;font-size: 1em; -webkit-text-stroke-width: initial;&#34;&gt;&lt;span style=&#34;font-size: 1em; -webkit-text-stroke-width: initial;&#34;&gt;A-Star&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/strong&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino; color: #000000;&#34;&gt;&lt;span style=&#34;font-size: 1em; -webkit-text-stroke-width: initial;&#34;&gt;&lt;span style=&#34;font-size: 1em; -webkit-text-stroke-width: initial;&#34;&gt;&lt;strong&gt; Search&lt;/strong&gt;.&amp;nbsp;Since you are using a priority queue, what happens when there are duplicate keys? What do you need to do to ensure that nodes are retrieved from the priority queue in the desired order?&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino; -webkit-text-stroke: #000000; color: #000000;&#34;&gt;&lt;strong style=&#34;color: #ff0000;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;span style=&#34;-webkit-text-stroke-width: initial;&#34;&gt;3. Submission&amp;nbsp;Test Cases&lt;/span&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;padding-left: 30px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino; -webkit-text-stroke: #000000; color: #000000;&#34;&gt;You can &lt;strong&gt;submit&lt;/strong&gt; your&amp;nbsp;project any number of times before the deadline. Only the final submission will be graded. Following each submission, all three&amp;nbsp;of&amp;nbsp;your algorithms&amp;nbsp;will be automatically&amp;nbsp;run on&amp;nbsp;two sample test cases each, for a total of &lt;strong&gt;6&lt;/strong&gt;&amp;nbsp;distinct tests:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;padding-left: 30px;&#34;&gt;&lt;strong&gt;&lt;span color=&#34;#000000&#34; face=&#34;book antiqua, palatino&#34; style=&#34;color: #000000; font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;span style=&#34;-webkit-text-stroke-color: #000000;&#34;&gt;Test Case #1&lt;br /&gt;&lt;/span&gt;&lt;/span&gt;&lt;/strong&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier; color: #0000ff;&#34;&gt;python driver.py bfs 3,1,2,0,4,5,6,7,8&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier; color: #0000ff;&#34;&gt;python driver.py dfs 3,1,2,0,4,5,6,7,8&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier; color: #0000ff;&#34;&gt;python driver.py ast 3,1,2,0,4,5,6,7,8&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;padding-left: 30px;&#34;&gt;&lt;span color=&#34;#000000&#34; face=&#34;book antiqua, palatino&#34;&gt;&lt;span&gt;&lt;strong&gt;&lt;span color=&#34;#000000&#34; face=&#34;book antiqua, palatino&#34; style=&#34;color: #000000; font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;span style=&#34;-webkit-text-stroke-color: #000000;&#34;&gt;Test Case #2&lt;br /&gt;&lt;/span&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000ff; font-family: &#39;courier new&#39;, courier;&#34;&gt;python driver.py bfs 1,2,5,3,4,0,6,7,8&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;color: #0000ff; font-family: &#39;courier new&#39;, courier;&#34;&gt;python driver.py dfs 1,2,5,3,4,0,6,7,8&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;color: #0000ff; font-family: &#39;courier new&#39;, courier;&#34;&gt;python driver.py ast 1,2,5,3,4,0,6,7,8&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;padding-left: 30px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino; -webkit-text-stroke: #000000; color: #000000;&#34;&gt;This&amp;nbsp;is provided as a sanity check for your code and the required output format. In particular, this is intended&amp;nbsp;to ensure that you do not lose credit for incorrect output formatting.&amp;nbsp;&lt;strong&gt;Make sure your code passes at least&amp;nbsp;these two test cases&lt;/strong&gt;. You will see that the results of each test are&amp;nbsp;assessed by&amp;nbsp;8&amp;nbsp;items: 7 items are listed in &lt;strong&gt;Section&amp;nbsp;IV. What Your Program Outputs&lt;/strong&gt;. The last point is&amp;nbsp;for code that executes and produces any output at all. Each item is worth 0.75 point.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color: #ff0000;&#34;&gt;&lt;strong&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino; -webkit-text-stroke: #000000;&#34;&gt;4. Grading and Stress Tests&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;padding-left: 30px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino; -webkit-text-stroke: #000000; color: #000000;&#34;&gt;We will grade your &lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino; -webkit-text-stroke: #000000;&#34;&gt;project by running &lt;/span&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino; -webkit-text-stroke: #000000;&#34;&gt;&lt;strong&gt;additional test cases&lt;/strong&gt; on your code. In particular, there will be five&amp;nbsp;test cases in total, each tested on all three&amp;nbsp;of your algorithms, for a total of &lt;strong&gt;15&lt;/strong&gt;&amp;nbsp;distinct tests. Similar to the submission test cases, each test will be graded by 8&amp;nbsp;items, for a total of 90&amp;nbsp;points. &lt;strong&gt;Plus, we give 10 points for code completing all 15 test cases within 10 minutes&lt;/strong&gt;. If you implement your code with reasonable&amp;nbsp;designs of data structures, your code will solve all 15 test cases within a minute in total.&amp;nbsp;&lt;/span&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;We will be using a wide variety of inputs to stress-test your algorithms to check for correctness of implementation. So, we recommend that you test your own code extensively.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;padding-left: 30px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino; -webkit-text-stroke: #000000; color: #000000;&#34;&gt;Do not worry about checking for &lt;strong&gt;malformed input&lt;/strong&gt; boards, including boards of non-square dimensions, or unsolvable boards.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;padding-left: 30px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino; -webkit-text-stroke: #000000; color: #000000;&#34;&gt;&lt;strong&gt;You will not be graded on the absolute values of your running-time or RAM usage statistics.&lt;/strong&gt; The values of these statistics can vary widely depending on the machine. &lt;strong&gt;However, we recommend that you take advantage of them in testing your code.&lt;/strong&gt;&amp;nbsp;Try batch-running your algorithms on various inputs, and plotting your results on a graph&amp;nbsp;to learn more about the&amp;nbsp;space and time complexity characteristics of your code. Just because an algorithm provides the correct path to goal does not mean it has been implemented correctly.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color: #ff0000;&#34;&gt;&lt;strong&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;5. Tips on Getting Started&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;padding-left: 30px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;Begin by writing a class to represent the &lt;b&gt;state&lt;/b&gt; of the game at a given turn, including parent and child nodes. We suggest writing a separate &lt;b&gt;solver&lt;/b&gt; class to work with the state class. Feel free to experiment with your design, for example including a &lt;b&gt;board&lt;/b&gt; class to represent the low-level physical configuration of the tiles, delegating the high-level functionality to the state class. When comparing your code with pseudocode, you might come up with another class for organising specific aspects of your search algorithm elegantly.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;padding-left: 30px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;You will not be graded on your design, so you are at a liberty to choose among your favorite programming paradigms. Students have successfully completed this project using an entirely object-oriented approach, and others have done so with a purely functional approach. Your submission will receive full credit as long as your driver program outputs the correct information.&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;div class=&#34;vert vert-7&#34; data-id=&#34;block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@html+block@34312ebbd3b248688a32aaf9e9818132&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;459e1960b79d11e79eb00aba30487072&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@html+block@34312ebbd3b248688a32aaf9e9818132&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:ColumbiaX+CSMM.101x+2T2017_2&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h3&gt;&lt;span style=&#34;color: #000000;&#34;&gt;&lt;strong&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;VI.&amp;nbsp;Before You&amp;nbsp;Finish&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span color=&#34;#ff0000&#34; face=&#34;book antiqua, palatino&#34; style=&#34;color: #ff0000; font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;b&gt;Make sure&lt;/b&gt;&lt;span style=&#34;color: #000000;&#34;&gt; your code passes at least the&amp;nbsp;two submission test cases.&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span color=&#34;#ff0000&#34; face=&#34;book antiqua, palatino&#34; style=&#34;color: #ff0000; font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;span style=&#34;color: #000000;&#34;&gt;&lt;span style=&#34;color: #ff0000;&#34;&gt;&lt;strong&gt;Make sure&lt;/strong&gt;&lt;/span&gt; your algorithms generate the correct solution for an arbitrary solvable problem instance of 8-puzzle.&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color: #000000; -webkit-text-stroke-width: initial; font-size: 1em; font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;strong&gt;&lt;span style=&#34;color: #ff0000;&#34;&gt;Make sure&lt;/span&gt;&lt;/strong&gt;&amp;nbsp;your program always terminates without error, and in a reasonable amount of time. &lt;strong&gt;You will receive zero points from the grader if your program fails to terminate. Running times of more than a minute or two may indicate a problem with your implementation.&lt;/strong&gt; If your implementation exceeds the time&amp;nbsp;limit allocated (20 minutes for all test cases), your grade may be incomplete.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color: #000000; -webkit-text-stroke: #000000; font-size: 1em; font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;span style=&#34;color: #ff0000;&#34;&gt;&lt;strong&gt;Make sure&lt;/strong&gt;&lt;/span&gt; your program output follows the specified format exactly. In particular, for the path to goal, use square brackets to surround the list of items, use single quotes around&amp;nbsp;each item, and capitalize the first letter of each item. Round floating point numbers to 8&amp;nbsp;places after the decimal. You will not receive proper credit from the grader if your format differs from the provided examples above.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;div class=&#34;vert vert-8&#34; data-id=&#34;block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@html+block@f9403ac749924d4094b015c6cc7bfc3c&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;459e1960b79d11e79eb00aba30487072&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@html+block@f9403ac749924d4094b015c6cc7bfc3c&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:ColumbiaX+CSMM.101x+2T2017_2&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h3&gt;&lt;span style=&#34;color: #ff0000;&#34;&gt;&lt;strong&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;USE OF VOCAREUM&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;This assignment uses Vocareum for submission and grading. Vocareum comes equipped with an editing environment that you may use to do your development work. You are&amp;nbsp;&lt;strong&gt;NOT&lt;/strong&gt;&amp;nbsp;required to use the editor. In particular, you are free to choose your favorite editor / IDE to do your development work on. When you are done with your work, you can simply upload your files onto Vocareum for&amp;nbsp;submission and grading.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;However, your assignments will be graded on the platform, so you&amp;nbsp;&lt;strong&gt;MUST&lt;/strong&gt; make sure that your code passes at least the submission test cases. In particular, do not use third-party libraries and packages. We do not guarantee that they will work on the platform, even if they work on your personal computer. For the purposes of this project,&amp;nbsp;everything that comes with the standard Python library should be more than sufficient.&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;div class=&#34;vert vert-9&#34; data-id=&#34;block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@lti_consumer+block@c71bdf0cd7cf422097b4cc0ebea3a250&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-lti_consumer&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;LtiConsumerXBlock&#34; data-course-id=&#34;course-v1:ColumbiaX+CSMM.101x+2T2017_2&#34; data-request-token=&#34;459e1960b79d11e79eb00aba30487072&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@lti_consumer+block@c71bdf0cd7cf422097b4cc0ebea3a250&#34; data-block-type=&#34;lti_consumer&#34;&gt;
+  &lt;h2 class=&#34;problem-header&#34;&gt;
+    Work on Project (AI.t) (External resource)
+&lt;/h2&gt;
+
+    &lt;div class=&#34;problem-progress&#34;&gt;
+            (100.0 points possible)
+    &lt;/div&gt;
+
+&lt;div
+    id=&#34;c71bdf0cd7cf422097b4cc0ebea3a250&#34;
+    class=&#34;lti_consumer lti-consumer-container&#34;
+    data-ask-to-send-username=&#34;False&#34;
+    data-ask-to-send-email=&#34;True&#34;
+&gt;
+
+        &lt;section class=&#34;wrapper-lti-link&#34;&gt;
+                &lt;div class=&#34;lti-description&#34;&gt;Your email address will be used to identify your submission entry.&lt;/div&gt;
+            &lt;p class=&#34;lti-link external&#34;&gt;
+                    &lt;button
+                        class=&#34;btn btn-pl-primary btn-base btn-lti-new-window&#34;
+                        data-target=&#34;/courses/course-v1:ColumbiaX+CSMM.101x+2T2017_2/xblock/block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@lti_consumer+block@c71bdf0cd7cf422097b4cc0ebea3a250/handler/lti_launch_handler&#34;
+                    &gt;
+                        Launch Project &lt;i class=&#34;icon fa fa-external-link&#34;&gt;&lt;/i&gt;
+                    &lt;/button&gt;
+            &lt;/p&gt;
+        &lt;/section&gt;
+
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_1"
+    aria-labelledby="tab_1"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:ColumbiaX+CSMM.101x+2T2017_2&#34; data-request-token=&#34;459e1960b79d11e79eb00aba30487072&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@vertical+block@ea497a813e3a43f59c9228a3ada87950&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Week 2 Project: Implementation FAQs&lt;/h2&gt;
+
+    
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;hafidzjazuli,block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@vertical+block@ea497a813e3a43f59c9228a3ada87950&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@html+block@a60649278e994142b9dd63ad5cf1d2e2&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;459e1960b79d11e79eb00aba30487072&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:ColumbiaX+CSMM.101x+2T2017_2+type@html+block@a60649278e994142b9dd63ad5cf1d2e2&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:ColumbiaX+CSMM.101x+2T2017_2&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;p&gt;&lt;span style=&#34;color: #ff0000;&#34;&gt;&lt;strong&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;Q. My search algorithm seems&amp;nbsp;correct but is too slow. How can I reduce its running time?&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;span face=&#34;book antiqua, palatino&#34; style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;A. &lt;/span&gt;&lt;/strong&gt;&lt;span face=&#34;book antiqua, palatino&#34; style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;Search algorithm is perhaps one of the best learning materials for computational complexity and Python&#39;s idiosyncrasies. There are four dos and don&#39;ts:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;strong&gt;1. Don&#39;t store possibly-large data member such as solution &lt;span style=&#34;color: #0000ff; font-family: &#39;courier new&#39;, courier;&#34;&gt;path&lt;/span&gt; in search tree node class. Instead, rethink what operation should be fast&lt;/strong&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;strong&gt;Explanation:&lt;/strong&gt; Storing a path from the root node in each node class achieves O(1) lookup time at the expense of O(n) creation time. For example, if the current state is visited after 60,000 intermediate states, the current state has to allocate a list of 60,000 elements, and each of the children states have to allocate a list of 60,001 elements. This would soon use up physical memory, and typically your machine&#39;s Operating System kills the search process.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;A key observation is that &lt;strong&gt;in the case of search algorithm, path lookup operation is executed just once after search finishes. Thus, the lookup operation is fine to be slow&lt;/strong&gt;. You might consider another data structure having O(n) lookup time for solution path but requiring O(1) operations during search.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;2. Don&#39;t be satisfied by just using &lt;span style=&#34;font-family: &#39;courier new&#39;, courier; color: #0000ff;&#34;&gt;list&lt;/span&gt; as frontier. Instead, design your &lt;span style=&#34;font-family: &#39;courier new&#39;, courier; color: #0000ff;&#34;&gt;Frontier&lt;/span&gt;&amp;nbsp;class which works faster.&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span face=&#34;book antiqua, palatino&#34; style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;strong&gt;Explanation:&lt;/strong&gt; one major bottleneck of &lt;span style=&#34;color: #0000ff; font-family: &#39;courier new&#39;, courier;&#34;&gt;list, deque,&lt;/span&gt;&amp;nbsp;or &lt;span style=&#34;color: #0000ff; font-family: &#39;courier new&#39;, courier;&#34;&gt;queue&lt;/span&gt;&amp;nbsp;class in Python is that their&amp;nbsp;&lt;strong&gt;membership testing operation&lt;/strong&gt;&amp;nbsp;is O(n). The membership testing speed is critical for search algorithm because that operation is executed for every child state. Coming up with using such list-like data structures is a good first step, but for using it with reasonable execution time, you might need one more trick.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span face=&#34;book antiqua, palatino&#34; style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;Note that pseudocode in lecture slides does not necessarily reflect implementation details (i.e. time and space). Rather, it conceptually shows the algorithm&#39;s inputs, processing orders, and outputs. One of your missions in this assignment is to make the &#34;frontier&#34; thing into a reality by using Python&#39;s &#34;low-level&#34; primitives.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;3. Don&#39;t use O(n) operation when&amp;nbsp;you have another faster way to do the same thing.&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;strong&gt;Explanation:&lt;/strong&gt; Roughly speaking, &lt;strong&gt;if you set one O(n) operation under your &lt;span style=&#34;color: #0000ff; font-family: &#39;courier new&#39;, courier;&#34;&gt;for neighbor in neighbors &lt;/span&gt;loop, your code will be highly likely to exceed grading&amp;nbsp;time limit&lt;/strong&gt;. In other words, it happens that your code executes drastically faster when you fix just one line of your code.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;For example, merging two &lt;strong&gt;&lt;span style=&#34;color: #0000ff; font-family: &#39;courier new&#39;, courier;&#34;&gt;set&lt;/span&gt;&lt;/strong&gt;s and checking an element is in the merged set is&amp;nbsp;an expensive operation, while checking an element is in one of the two sets are O(1) operation.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;strong&gt;4. Don&#39;t use &lt;span style=&#34;color: #0000ff; font-family: &#39;courier new&#39;, courier;&#34;&gt;copy.deepcopy()&lt;/span&gt;&amp;nbsp;for list. Instead, use &lt;span style=&#34;font-family: &#39;courier new&#39;, courier; color: #0000ff;&#34;&gt;list1 = [5,6]; list2 = list(list1)&amp;nbsp;&lt;/span&gt;or&amp;nbsp;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier; color: #0000ff;&#34;&gt;&amp;nbsp;list2 = list1[:]&lt;/span&gt;&lt;/strong&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;strong&gt;Explanation:&lt;/strong&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier; color: #0000ff;&#34;&gt;&amp;nbsp;copy.deepcopy() &lt;/span&gt;handles very rare recursive edge cases and is slow. When simply copying a list or other data structures, you can construct a new list by &lt;span style=&#34;color: #0000ff; font-family: &#39;courier new&#39;, courier;&#34;&gt;list()&lt;/span&gt; constructor or &lt;strong&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;:&lt;/span&gt;&lt;/strong&gt;&amp;nbsp;operator. Some people avoid the second notation due to readability, but it&#39;s frequently used in the real world.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color: #ff0000;&#34;&gt;&lt;strong&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;Q. How can I locate the slow code block?&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;A. The simplest way is to execute&lt;strong&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier; color: #0000ff;&#34;&gt; python -m cProfile -s tottime driver.py &amp;lt;puzzle initial state&amp;gt;&lt;/span&gt;&lt;/strong&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;-m : specifies module name. cProfile is a built-in profiling Python module.&lt;/li&gt;
+&lt;li&gt;-s : sorting by the &lt;span style=&#34;color: #0000ff; font-family: &#39;courier new&#39;, courier;&#34;&gt;tottime&lt;/span&gt; (total execution time) statistic.&amp;nbsp;&lt;/li&gt;
+&lt;li&gt;For meaning of each statistics, see&lt;a href=&#34;https://docs.python.org/2/library/profile.html#instant-user-s-manual&#34; target=&#34;[object Object]&#34;&gt; this official documentation&lt;/a&gt;.&amp;nbsp;&lt;/li&gt;
+&lt;li&gt;The profiling result will be shown even if you stop your driver.py by Ctrl + C command.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;If you would like to see the results not on stdout but on browser, &lt;a href=&#34;https://github.com/ymichael/cprofilev&#34; target=&#34;[object Object]&#34;&gt;cprofilev&lt;/a&gt;&amp;nbsp;module might help. There is a well-written &lt;a href=&#34;https://ymichael.com/2014/03/08/profiling-python-with-cprofile.html&#34; target=&#34;[object Object]&#34;&gt;tutorial&lt;/a&gt;&amp;nbsp;here.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;br /&gt;Having said that, sometimes cProfile does not show which part of code makes search slow. Typical case is the first top entry when sorted by tottime is your entire search function (e.g. &lt;span style=&#34;color: #3366ff;&#34;&gt;A-STAR-SEARCH&lt;/span&gt;, which is called only one time), and it takes 99% of your execution time.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;One approach is to make a wrapper function for an operation which you think might cause the slowness. For example, if you&#39;re suspecting &lt;strong&gt;&lt;span style=&#34;color: #3366ff; font-family: &#39;courier new&#39;, courier;&#34;&gt;set1 | set2&lt;/span&gt;&lt;/strong&gt; (merging two sets) operation is slow, you can make the following wrapper function:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier; color: #3366ff;&#34;&gt;&lt;strong&gt;def merge_two_sets(set1, set2): # O(1)? O(n)? O(len(set1) + len(set2))?&lt;/strong&gt;&lt;br /&gt;&lt;strong&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; return set1 | set2&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span face=&#34;book antiqua, palatino&#34; style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;This simple trick triggers cProfile module to show how long this one-operation function takes. In my test script, 95% of execution time is actually caused by this operation. Recall that cProfile will return profiling results even if you pause your program by Ctrl + C command.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;br class=&#34;Apple-interchange-newline&#34; /&gt;&lt;span style=&#34;color: #ff0000; font-weight: bold;&#34;&gt;Q. Do I need to optimize my search algorithm as much as possible?&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 16px;&#34;&gt;&lt;span face=&#34;book antiqua, palatino&#34; style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;A. You don&#39;t need to squeeze your code&#39;s performance by fancy optimization techniques such as bit shifting or reducing the number of function calls (i.e. putting every operation in one function for reducing overhead of function calls). Except &lt;span style=&#34;color: #3366ff; font-family: &#39;courier new&#39;, courier;&#34;&gt;copy.deepcopy()&lt;/span&gt;, most of your design choices are about choosing best data structures in terms of time/space complexity.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 16px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 16px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;span style=&#34;color: #ff0000; font-weight: bold;&#34;&gt;&lt;br /&gt;Q. Is there any other test cases?&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;span style=&#34;color: #ff0000; font-weight: bold;&#34;&gt;&lt;span style=&#34;color: #3c3c3c; font-weight: normal;&#34;&gt;A.&amp;nbsp;The following two test cases might&amp;nbsp;help for your stat validation. Note that long path_to_goals are truncated and running_time/max_ram_usage are removed:&lt;/span&gt;&lt;br /&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier; color: #0000ff;&#34;&gt;&lt;span style=&#34;font-weight: bold;&#34;&gt;&lt;span style=&#34;font-weight: normal;&#34;&gt;python driver.py dfs&amp;nbsp;6,1,8,4,0,2,7,3,5&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;&lt;span face=&#34;book antiqua, palatino&#34;&gt;path_to_goal: [&#39;Up&#39;, &#39;Left&#39;, &#39;Down&#39;, ... , &#39;Up&#39;, &#39;Left&#39;, &#39;Up&#39;, &#39;Left&#39;]&lt;br /&gt;&lt;/span&gt;cost_of_path: 46142&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;nodes_expanded: 51015&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;search_depth: 46142&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;max_search_depth: 46142&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;&lt;span style=&#34;color: #0000ff; font-weight: bold;&#34;&gt;&lt;span style=&#34;font-weight: normal;&#34;&gt;python driver.py bfs&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;span face=&#34;book antiqua, palatino&#34;&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;6,1,8,4,0,2,7,3,5&lt;/span&gt;&lt;br /&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;&lt;span face=&#34;book antiqua, palatino&#34;&gt;path_to_goal: [&#39;Down&#39;, &#39;Right&#39;, &#39;Up&#39;, &#39;Up&#39;, &#39;Left&#39;, &#39;Down&#39;, &#39;Right&#39;, &#39;Down&#39;, &#39;Left&#39;, &#39;Up&#39;, &#39;Left&#39;, &#39;Up&#39;, &#39;Right&#39;, &#39;Right&#39;, &#39;Down&#39;, &#39;Down&#39;, &#39;Left&#39;, &#39;Left&#39;, &#39;Up&#39;, &#39;Up&#39;]&lt;br /&gt;&lt;/span&gt;cost_of_path: 20&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;nodes_expanded: 54094&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;search_depth: 20&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;max_search_depth: 21&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;python driver.py ast&lt;/span&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier; font-weight: bold;&#34;&gt;&lt;span style=&#34;font-weight: normal;&#34;&gt;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;span face=&#34;book antiqua, palatino&#34; style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;6,1,8,4,0,2,7,3,5&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span face=&#34;courier new, courier&#34; style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;path_to_goal: [&#39;Down&#39;, &#39;Right&#39;, &#39;Up&#39;, &#39;Up&#39;, &#39;Left&#39;, &#39;Down&#39;, &#39;Right&#39;, &#39;Down&#39;, &#39;Left&#39;, &#39;Up&#39;, &#39;Left&#39;, &#39;Up&#39;, &#39;Right&#39;, &#39;Right&#39;, &#39;Down&#39;, &#39;Down&#39;, &#39;Left&#39;, &#39;Left&#39;, &#39;Up&#39;, &#39;Up&#39;]&lt;br /&gt;&lt;/span&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;cost_of_path: 20&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;nodes_expanded: 696&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;search_depth: 20&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;max_search_depth: 20&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 16px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;span style=&#34;color: #ff0000; font-weight: bold;&#34;&gt;&lt;span style=&#34;color: #3c3c3c; font-weight: normal;&#34;&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier; color: #0000ff;&#34;&gt;python driver.py dfs&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier; color: #0000ff;&#34;&gt;8,6,4,2,1,3,5,7,0&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;&lt;span face=&#34;book antiqua, palatino&#34;&gt;path_to_goal: [&#39;Up&#39;, &#39;Up&#39;, &#39;Left&#39;, ...,&amp;nbsp;, &#39;Up&#39;, &#39;Up&#39;, &#39;Left&#39;]&lt;br /&gt;&lt;/span&gt;cost_of_path: 9612&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;nodes_expanded: 9869&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;search_depth: 9612&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;max_search_depth: 9612&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;&lt;span style=&#34;font-size: 16px;&#34;&gt;&lt;span style=&#34;color: #ff0000; font-weight: bold;&#34;&gt;&lt;span style=&#34;color: #3c3c3c; font-weight: normal;&#34;&gt;&lt;br /&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;python driver.py bfs&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span face=&#34;book antiqua, palatino&#34; style=&#34;color: #0000ff;&#34;&gt;8,6,4,2,1,3,5,7,0&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;&lt;span face=&#34;book antiqua, palatino&#34;&gt;path_to_goal: [&#39;Left&#39;, &#39;Up&#39;, &#39;Up&#39;, &#39;Left&#39;, &#39;Down&#39;, &#39;Right&#39;, &#39;Down&#39;, &#39;Left&#39;, &#39;Up&#39;, &#39;Right&#39;, &#39;Right&#39;, &#39;Up&#39;, &#39;Left&#39;, &#39;Left&#39;, &#39;Down&#39;, &#39;Right&#39;, &#39;Right&#39;, &#39;Up&#39;, &#39;Left&#39;, &#39;Down&#39;, &#39;Down&#39;, &#39;Right&#39;, &#39;Up&#39;, &#39;Left&#39;, &#39;Up&#39;, &#39;Left&#39;]&lt;br /&gt;&lt;/span&gt;cost_of_path: 26&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;nodes_expanded: 166786&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;search_depth: 26&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;max_search_depth: 27&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 16px;&#34;&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color: #ff0000; font-weight: bold;&#34;&gt;&lt;span style=&#34;color: #3c3c3c; font-weight: normal;&#34;&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;python driver.py ast&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span face=&#34;book antiqua, palatino&#34; style=&#34;color: #0000ff;&#34;&gt;8,6,4,2,1,3,5,7,0&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;path_to_goal: [&#39;Left&#39;, &#39;Up&#39;, &#39;Up&#39;, &#39;Left&#39;, &#39;Down&#39;, &#39;Right&#39;, &#39;Down&#39;, &#39;Left&#39;, &#39;Up&#39;, &#39;Right&#39;, &#39;Right&#39;, &#39;Up&#39;, &#39;Left&#39;, &#39;Left&#39;, &#39;Down&#39;, &#39;Right&#39;, &#39;Right&#39;, &#39;Up&#39;, &#39;Left&#39;, &#39;Down&#39;, &#39;Down&#39;, &#39;Right&#39;, &#39;Up&#39;, &#39;Left&#39;, &#39;Up&#39;, &#39;Left&#39;]&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;cost_of_path: 26&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;nodes_expanded: 1585&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;search_depth: 26&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;max_search_depth: 26&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;span style=&#34;color: #ff0000; font-weight: bold;&#34;&gt;&lt;span style=&#34;color: #3c3c3c; font-weight: normal;&#34;&gt;Note that these two test cases are different from ones used for grading. Coming up with tricky test cases also help you understand search algorithm behaviours deeply.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;span style=&#34;color: #ff0000; font-weight: bold;&#34;&gt;&lt;span style=&#34;color: #3c3c3c; font-weight: normal;&#34;&gt;&lt;span style=&#34;color: #ff0000; font-weight: bold;&#34;&gt;Q. (Windows Users) Is there &#34;resource&#34; module in Windows?&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;If you use Python in Cygwin, resource module is available. If otherwise, one possible workaround is to use third-party module only if the machine is Windows:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier; color: #0000ff;&#34;&gt;&lt;span face=&#34;book antiqua, palatino&#34;&gt;import sys&lt;br /&gt;&lt;/span&gt;if sys.platform == &#34;win32&#34;:&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier; color: #0000ff;&#34;&gt;&amp;nbsp; &amp;nbsp; import psutil&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier; color: #0000ff;&#34;&gt;&amp;nbsp; &amp;nbsp; print(&#34;psutil&#34;, psutil.Process().memory_info().rss)&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier; color: #0000ff;&#34;&gt;else:&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier; color: #0000ff;&#34;&gt;&amp;nbsp; &amp;nbsp; # Note: if you execute Python from cygwin,&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier; color: #0000ff;&#34;&gt;&amp;nbsp; &amp;nbsp; # the sys.platform is &#34;cygwin&#34;&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier; color: #0000ff;&#34;&gt;&amp;nbsp; &amp;nbsp; # the grading system&#39;s sys.platform is &#34;linux2&#34;&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier; color: #0000ff;&#34;&gt;&amp;nbsp; &amp;nbsp; import resource&lt;/span&gt;&lt;br /&gt;&lt;span style=&#34;font-family: &#39;courier new&#39;, courier; color: #0000ff;&#34;&gt;&amp;nbsp; &amp;nbsp; print(&#34;resource&#34;, resource.getrusage(resource.RUSAGE_SELF).ru_maxrss)&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;Note that&lt;strong&gt; the values of&amp;nbsp;max_ram_usage and running_time are not graded&lt;/strong&gt; as stated in project instruction page. These stats are only for helping your study on search algorithm&#39;s time/space metrics.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 16px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;span style=&#34;color: #ff0000; font-weight: bold;&#34;&gt;&lt;span style=&#34;color: #3c3c3c; font-weight: normal;&#34;&gt;&lt;span style=&#34;color: #ff0000; font-weight: bold;&#34;&gt;Q. Why does the example of &lt;span style=&#34;font-family: &#39;courier new&#39;, courier; color: #0000ff;&#34;&gt;python driver.py dfs 1,2,5,3,4,0,6,7,8&lt;/span&gt; return [&#39;Up&#39;, &#39;Left&#39;, &#39;Left&#39;] instead of [&#39;Up&#39;, &#39;Left&#39;, &#39;Down&#39;, ... ] (a solution path with 31 moves)? We are using UDLR (Up, Down, Left, Right) order, and Down move should be executed before Left move. Isn&#39;t the [&#39;Up&#39;, &#39;Left&#39;, &#39;Left&#39;] solution resulted from optimization forbidden in project instruction?&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 16px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;strong&gt;No, [&#39;Up&#39;, &#39;Left&#39;, &#39;Left&#39;] solution does not use the forbidden optimization and is a correct answer&lt;/strong&gt;. Compared to the simpleness of the 3-move solution path, you would notice that &#34;nodes_expanded&#34; statistic is extremely large (181437 states). In fact, the total reachable states in (solvable) 8-puzzle is 9!/2 = 181440 states, so this statistic suggests depth first search &lt;strong&gt;constantly overlooks the goal state and expands more than 99.9%&amp;nbsp;of possible states in the search space&lt;/strong&gt;.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 16px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;Why is this happening? &lt;br /&gt;Please think about the reason for one minute before reading the following explanations.&lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p style=&#34;font-size: 16px;&#34;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p style=&#34;font-size: 16px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 16px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;There are two facts we can read from dfs pseudocode in class slides:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 16px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;Fact 1. goalTest() function is only called for states which are just popped out from frontier. In other words, goalTest() is not applied to &lt;span style=&#34;font-family: &#39;courier new&#39;, courier;&#34;&gt;&lt;strong&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;neighbor&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt; states &lt;strong&gt;even if the neighbor is actually the solution state&lt;/strong&gt; (because we prohibited such an&amp;nbsp;optimization).&lt;br /&gt;Fact 2. A child state (neighbor) is only pushed into frontier when it&#39;s not already in frontier (and explored). More specifically, &lt;strong&gt;the goal state&lt;/strong&gt; is only pushed into frontier when it&#39;s not already in frontier.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 16px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;Combining those two facts reaches to the conclusion: &lt;strong&gt;since the goal state is already pushed into frontier (i.e. the state corresponding to [&#39;Up&#39;, &#39;Left&#39;, &#39;Left&#39;] move), any subsequent encounter to the solution state cannot execute frontier.push() or goalTest() and is effectively meaningless.&lt;/strong&gt; Thus, the dfs algorithm extensively searches through numerous states in 8-puzzle (without&amp;nbsp;putting the solution state into frontier again), gradually goes back to the previously pushed states, and finally find the solution state which is pushed at the very beginning of the search.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 16px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;This question would arise when you remove/forget&lt;/span&gt; &amp;nbsp;&lt;span style=&#34;color: #0000ff; font-family: &#39;courier new&#39;, courier;&#34;&gt;neighbor in frontier &lt;/span&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;checking in your pseudocode. And if you add the checking, you will face the slowness of membership checking. In that case, please see the first question of this page&lt;/span&gt; (&#34;&lt;strong style=&#34;color: #ff0000;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;Q. My search algorithm seems&amp;nbsp;correct but is too slow. How can I reduce its running time?&lt;/span&gt;&lt;/strong&gt;&#34;).&lt;/p&gt;
+&lt;p style=&#34;font-size: 16px;&#34;&gt;&lt;strong style=&#34;color: #ff0000;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;Q. Why the max_search_depth of python driver.py bfs 1,2,5,3,4,0,6,7,8 is 4 even though the goal state is at depth 3?&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 16px;&#34;&gt;&lt;span face=&#34;book antiqua, palatino&#34; style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;The following figure would be useful&amp;nbsp;(please ignore g and h values):&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 16px;&#34;&gt;&lt;span face=&#34;book antiqua, palatino&#34; style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;img src=&#34;//d37djvu3ytnwxt.cloudfront.net/assets/courseware/v1/1b93e4f8f55f6565023ba5bf2bcc5f6c/asset-v1:ColumbiaX+CSMM.101x+2T2017_2+type@asset+block/bfs-125340678-maxdepth4.png&#34; alt=&#34;&#34; type=&#34;saveimage&#34; target=&#34;[object Object]&#34; preventdefault=&#34;function (){r.isDefaultPrevented=n}&#34; stoppropagation=&#34;function (){r.isPropagationStopped=n}&#34; stopimmediatepropagation=&#34;function (){r.isImmediatePropagationStopped=n}&#34; isdefaultprevented=&#34;function t(){return!1}&#34; ispropagationstopped=&#34;function t(){return!1}&#34; isimmediatepropagationstopped=&#34;function t(){return!1}&#34; width=&#34;546&#34; height=&#34;329&#34; /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 16px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 16px;&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 16px;&#34;&gt;&lt;strong style=&#34;color: #ff0000;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;Q. Why does my driver_3.py return nothing on Vocareum?&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 16px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;If you have default driver.py in your submission, please remove that file. Grading script does not work correctly if both of driver.py and driver_3.py exist.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 16px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;span style=&#34;color: rgb(255, 0, 0); font-weight: bold;&#34;&gt;Q. My&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;font-size: 1em; background-color: initial; font-family: monospace, monospace; white-space: pre-wrap;&#34;&gt;&lt;strong&gt;&lt;span style=&#34;color: #0000ff; font-family: &#39;courier new&#39;, courier;&#34;&gt;python driver.py dfs 1,2,5,3,4,0,6,7,8&lt;/span&gt;&lt;/strong&gt; &lt;strong&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino; color: #ff0000;&#34;&gt;returns max_search_depth as &lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;strong&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino; color: #ff0000;&#34;&gt;&lt;span face=&#34;monospace, monospace&#34;&gt;&lt;span style=&#34;white-space: pre-wrap;&#34;&gt;66126 not 66125. Where does this off-by-one difference come from&lt;/span&gt;&lt;/span&gt;?&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color: #ff0000; font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;span style=&#34;color: #000000;&#34;&gt;One probable reason is you are updating your max_search_depth too early. If you increase max_search_depth after generate_successor() but before checking membership, the generated child state could be&amp;nbsp;actually already in frontier or explored (thus the state cannot be appended to the search tree).&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;color: rgb(255, 0, 0); font-family: &amp;quot;book antiqua&amp;quot;, palatino; font-weight: bold;&#34;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 16px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;span style=&#34;color: rgb(255, 0, 0); font-weight: bold;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&#34;font-size: 16px;&#34;&gt;&lt;span style=&#34;font-family: &#39;book antiqua&#39;, palatino;&#34;&gt;&lt;span style=&#34;color: rgb(255, 0, 0); font-weight: bold;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_content" role="tabpanel"></div>
+
+  <nav class="sequence-bottom" aria-label="Section">
+    <button class="sequence-nav-button button-previous">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span>Previous</span>
+    </button>
+    <button class="sequence-nav-button button-next">
+      <span>Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+  </nav>
+</div>
+
+</div>
+
+        </main>
+    </section>
+
+    <section class="courseware-results-wrapper">
+      <div id="loading-message" aria-live="polite" aria-relevant="all"></div>
+      <div id="error-message" aria-live="polite"></div>
+      <div class="courseware-results search-results" data-course-id="course-v1:ColumbiaX+CSMM.101x+2T2017_2" data-lang-code="en"></div>
+    </section>
+
+  </div>
+  
+
+
+
+
+
+
+    <div class="verification-sock"
+    >
+        <button type="button" class="btn btn-primary focusable action-toggle-verification-sock">
+            Learn About Verified Certificates
+        </button>
+        <div class="verification-main-panel">
+            <div class="verification-desc-panel content-main">
+                <h2>edX Verified Certificate</h2>
+                <h4>Why upgrade?</h4>
+                <ul>
+                    <li>Official proof of completion</li>
+                    <li>Easily shareable certificate</li>
+                    <li>Proven motivator to complete the course</li>
+                    <li>Certificate purchases help edX continue to offer free courses</li>
+                </ul>
+                <h4>How it works</h4>
+                <ul>
+                    <li>Pay the Verified Certificate upgrade fee</li>
+                    <li>Verify your identity with a webcam and government-issued ID</li>
+                    <li>Study hard and pass the course</li>
+                    <li>Share your certificate with friends, employers, and others</li>
+                </ul>
+                <h4>edX Learner Stories</h4>
+                <div class="learner-story-container">
+                    <img class="student-image" alt="Student Image" src="https://prod-edxapp.edx-cdn.org/static/course_experience/images/learner-quote.05d56e5ddbc1.png" />
+                    <div class="story-quote">
+                        My certificate has helped me showcase my knowledge on my
+                        resume - I feel like this certificate could really help me land
+                        my dream job!
+                        <span class="author">- Christina Fong, edX Learner</span>
+                    </div>
+                </div>
+                <div class="learner-story-container">
+                    <img class="student-image" alt="Student Image" src="https://prod-edxapp.edx-cdn.org/static/course_experience/images/learner-quote2.39200c5db560.png" />
+                    <div class="story-quote">
+                        I wanted to include a verified certificate on my resume and my profile to
+                        illustrate that I am working towards this goal I have and that I have
+                        achieved something while I was unemployed.<br/>
+                        <span class="author">- Cheryl Troell, edX Learner</span>
+                    </div>
+                </div>
+                <img class="mini-cert" src="https://prod-edxapp.edx-cdn.org/static/course_experience/images/verified-cert.891c55cad756.png"/>
+                <a href="https://ecommerce.edx.org/basket/add/?sku=EDE47E7">
+                    <button type="button" class="btn btn-upgrade stuck-top focusable action-upgrade-certificate" data-creative="original_sock" data-position="sock">
+                        Upgrade ($199)
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+    
+            
+            <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/bundles/CourseSock.0c6fb63b701e12aed42b.b77329a14ad8.js" ></script>
+            
+              <script type="text/javascript">
+                  
+    new CourseSock({
+        el:'.verification-sock'
+    });
+
+              </script>
+            
+        
+
+</div>
+<div class="container-footer">
+    <div class="course-license">
+      
+
+
+    © <span class="license-text">All Rights Reserved</span>
+
+    </div>
+</div>
+
+      
+    </div>
+
+        
+
+
+
+<footer id="footer-edx-v3" role="contentinfo" aria-label="Page Footer"
+>
+    <h2 class="sr footer-about-title">About edX</h2>
+    <div class="footer-content-wrapper">
+      <div class="footer-logo">
+          <a href="https://www.edx.org">
+            <img alt="edX Home Page" src="https://prod-edxapp.edx-cdn.org/static/edx.org/images/logo-footer.fde85fe42f6b.png">
+          </a>
+      </div>
+
+      <div class="site-details">
+          <nav class="site-nav" aria-label="About edX">
+            <ul class="about-links">
+                <li class="list-item">
+                  <a href="https://www.edx.org/about-us">About</a>
+                </li>
+                <li class="list-item">
+                  <a href="https://www.edx.org/enterprise">edX for Business</a>
+                </li>
+                <li class="list-item">
+                  <a href="https://www.edx.org/blog">Blog</a>
+                </li>
+                <li class="list-item">
+                  <a href="https://www.edx.org/news-announcements">News</a>
+                </li>
+                <li class="list-item">
+                  <a href="https://support.edx.org">Help Center</a>
+                </li>
+                <li class="list-item">
+                  <a href="https://www.edx.org/contact">Contact</a>
+                </li>
+                <li class="list-item">
+                  <a href="https://www.edx.org/careers">Careers</a>
+                </li>
+                <li class="list-item">
+                  <a href="https://www.edx.org/donate">Donate</a>
+                </li>
+            </ul>
+          </nav>
+          <nav class="legal-notices" aria-label="Legal">
+            <ul class="legal-links">
+                <li class="list-item">
+                  <a href="https://www.edx.org/edx-terms-service">Terms of Service & Honor Code</a>
+                </li>
+                <li class="list-item">
+                  <a href="https://www.edx.org/edx-privacy-policy">Privacy Policy</a>
+                </li>
+                <li class="list-item">
+                  <a href="https://www.edx.org/accessibility">Accessibility Policy</a>
+                </li>
+                <li class="list-item">
+                  <a href="https://www.edx.org/sitemap">Sitemap</a>
+                </li>
+                <li class="list-item">
+                  <a href="https://www.edx.org/media-kit">Media Kit</a>
+                </li>
+            </ul>
+          </nav>
+
+              
+
+
+
+<div class="footer-language-selector">
+    <label for="footer-language-select">
+        <span class="icon fa fa-globe" aria-hidden="true"></span>
+        <span class="sr">Choose Language</span>
+    </label>
+    <select id="footer-language-select" name="language" onchange="footerLanguageSelector.handleSelection(this)">
+            
+                <option value="ar">العربية</option>
+            
+                <option value="en" selected="selected">English</option>
+            
+                <option value="es-419">español</option>
+            
+                <option value="fr">français</option>
+            
+                <option value="zh-cn">中文</option>
+    </select>
+</div>
+
+<script type="text/javascript">
+    window.footerLanguageSelector = {
+        handleSelection: function($select) {
+            this.setLanguageCookie($select.value, this.refreshPage);
+        },
+
+        setLanguageCookie: function(value, callback) {
+            var cookie = 'prod\u002Dedx\u002Dlanguage\u002Dpreference=' + value + ';path=/';
+
+            
+                cookie += ';domain=.edx.org';
+                cookie += ';max-age=1209600';
+
+            document.cookie = cookie;
+
+            callback();
+        },
+
+        refreshPage: function() {
+            window.location.reload();
+        }
+    };
+</script>
+
+
+          <p class="copyright">© 2012–2017 edX Inc.  All rights reserved except where noted.  EdX, Open edX and the edX and Open edX logos are registered trademarks or trademarks of edX Inc.
+           | 粤ICP备17044299号-2
+	  </p>
+
+          <div class="openedx-link">
+            <a href="http://open.edx.org" title="Powered by Open edX">
+              <img alt="Powered by Open edX" src="https://files.edx.org/openedx-logos/edx-openedx-logo-tag.png" width="140">
+            </a>
+          </div>
+      </div>
+
+      <div class="external-links">
+        <ul class="social-media-links">
+            <li class="list-item">
+                <a href="http://www.facebook.com/EdxOnline" class="sm-link external" title="Facebook" rel="noreferrer">
+                    <span class="icon fa fa-facebook-square" aria-hidden="true"></span>
+                    <span class="sr">Like edX on Facebook</span>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="https://twitter.com/edXOnline" class="sm-link external" title="Twitter" rel="noreferrer">
+                    <span class="icon fa fa-twitter" aria-hidden="true"></span>
+                    <span class="sr">Follow edX on Twitter</span>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="https://www.youtube.com/user/edxonline?sub_confirmation=1" class="sm-link external" title="Youtube" rel="noreferrer">
+                    <span class="icon fa fa-youtube" aria-hidden="true"></span>
+                    <span class="sr">Subscribe to the edX YouTube channel</span>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="http://www.linkedin.com/company/edx" class="sm-link external" title="LinkedIn" rel="noreferrer">
+                    <span class="icon fa fa-linkedin-square" aria-hidden="true"></span>
+                    <span class="sr">Follow edX on LinkedIn</span>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="https://plus.google.com/+edXOnline" class="sm-link external" title="Google+" rel="noreferrer">
+                    <span class="icon fa fa-google-plus-square" aria-hidden="true"></span>
+                    <span class="sr">Follow edX on Google+</span>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="http://www.reddit.com/r/edx" class="sm-link external" title="Reddit" rel="noreferrer">
+                    <span class="icon fa fa-reddit" aria-hidden="true"></span>
+                    <span class="sr">Subscribe to the edX subreddit</span>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="mobile-app-links">
+            <li class="list-item">
+                <a href="https://itunes.apple.com/us/app/edx/id945480667?mt=8" class="app-link external">
+                    <img alt="Download the edX mobile app from the Apple App Store" src="https://prod-edxapp.edx-cdn.org/static/images/app/app_store_badge_135x40.d0558d910630.svg">
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="https://play.google.com/store/apps/details?id=org.edx.mobile" class="app-link external">
+                    <img alt="Download the edX mobile app from Google Play" src="https://prod-edxapp.edx-cdn.org/static/images/app/google_play_badge_45.144f2dd05129.png">
+                </a>
+            </li>
+        </ul>
+      </div>
+    </div>
+</footer>
+
+
+
+  
+
+    <link href="https://prod-edxapp.edx-cdn.org/static/edx.org/css/lms-footer-edx.49bcce522d54.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+  </div>
+
+  
+  
+  <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/common/js/vendor/jquery.scrollTo.525edcc52fe8.js"></script>
+  <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/vendor/flot/jquery.flot.d3d45ff0c6a8.js"></script>
+
+  <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/vendor/codemirror-compressed.dd4b74f7c5fe.js"></script>
+
+  
+    <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/edx.org/js/lms-courseware.94e582ddac20.js" charset="utf-8"></script>
+
+
+  
+
+
+
+<script type="text/javascript">
+    // Fast Preview was introduced in 2.5. However, it
+    // causes undesirable flashing/font size changes when
+    // MathJax is used for interactive preview (equation editor).
+    // Setting processSectionDelay to 0 (see below) fully eliminates
+    // fast preview, but to reduce confusion, we are also setting
+    // the option as displayed in the context menu to false.
+    // When upgrading to 2.6, check if this variable name changed.
+    window.MathJax = {
+      menuSettings: {CHTMLpreview: false}
+    };
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [
+        ["\\(","\\)"],
+        ['[mathjaxinline]','[/mathjaxinline]']
+      ],
+      displayMath: [
+        ["\\[","\\]"],
+        ['[mathjax]','[/mathjax]']
+      ]
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+
+  // In order to eliminate all flashing during interactive
+  // preview, it is necessary to set processSectionDelay to 0
+  // (remove delay between input and output phases). This
+  // effectively disables fast preview, regardless of
+  // the fast preview setting as shown in the context menu.
+  MathJax.Hub.processSectionDelay = 0;
+
+  MathJax.Hub.signal.Interest(function(message) {
+    if(message[0] === "End Math") {
+        set_mathjax_display_div_settings();
+    }
+  });
+  function set_mathjax_display_div_settings() {
+    $('.MathJax_Display').each(function( index ) {
+      this.setAttribute('tabindex', '0');
+      this.setAttribute('aria-live', 'off');
+      this.removeAttribute('role');
+      this.removeAttribute('aria-readonly');
+    });
+  }
+</script>
+
+
+<!-- This must appear after all mathjax-config blocks, so it is after the imports from the other templates.
+     It can't be run through static.url because MathJax uses crazy url introspection to do lazy loading of
+     MathJax extension libraries -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+
+
+  
+    
+      <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/courseware/courseware_factory.1504fc10caef.js?raw"></script>
+    <script type="text/javascript">
+        (function (require) {
+            require(['js/courseware/courseware_factory'], function (CoursewareFactory) {
+                
+    CoursewareFactory();
+  
+            });
+        }).call(this, require || RequireJS.require);
+    </script>
+
+
+
+  <script type="text/javascript">
+    var $$course_id = "course\u002Dv1:ColumbiaX+CSMM.101x+2T2017_2";
+  </script>
+
+<script>
+function LtiConsumerXBlock(runtime, element) {
+    $(function ($) {
+        // Adapted from leanModal v1.1 by Ray Stone - http://finelysliced.com.au
+        // Dual licensed under the MIT and GPL
+        // Renamed leanModal to iframeModal to avoid clash with platform-provided leanModal
+        // which removes the href attribute from iframe elements upon modal closing
+        $.fn.extend({
+            iframeModal: function (options) {
+                var $trigger = $(this);
+                var modal_id = $trigger.data("target");
+                var defaults = {top: 100, overlay: 0.5, closeButton: null};
+                var overlay_id = (modal_id + '_lean-overlay').replace('#', '');
+                var overlay = $("<div id='" + overlay_id + "' class='lean-overlay'></div>");
+                $("body").append(overlay);
+                options = $.extend(defaults, options);
+                return this.each(function () {
+                    var o = options;
+                    $(this).click(function (e) {
+                        var $modal = $(modal_id);
+                        // Set iframe src attribute to launch LTI provider
+                        $modal.find('iframe').attr('src', $modal.data('launch-url'));
+                        $("#" + overlay_id).click(function () {
+                            close_modal(modal_id)
+                        });
+                        $(o.closeButton).click(function () {
+                            close_modal(modal_id)
+                        });
+                        var modal_height = $(modal_id).outerHeight();
+                        var modal_width = $(modal_id).outerWidth();
+                        $("#" + overlay_id).css({"display": "block", opacity: 0});
+                        $("#" + overlay_id).fadeTo(200, o.overlay);
+                        $(modal_id).css({
+                            "display": "block"
+                        });
+                        $(modal_id).fadeTo(200, 1);
+                        $(modal_id).attr('aria-hidden', false);
+                        $('body').css('overflow', 'hidden');
+
+                        e.preventDefault();
+
+                        /* Manage focus for modal dialog */
+                        /* Set focus on close button */
+                        $(o.closeButton).focus();
+
+                        /* Redirect close button to iframe */
+                        $(o.closeButton).on('keydown', function (e) {
+                           if (e.which === 9) {
+                               e.preventDefault();
+                               // This is a workaround due to Firefox triggering focus calls oddly.
+                               setTimeout(function () {
+                                   $modal.find('iframe')[0].contentWindow.focus();
+                               }, 1);
+                           }
+                        });
+
+                        /* Redirect non-iframe tab to close button */
+                        var $inputs = $('select, input, textarea, button, a').filter(':visible').not(o.closeButton);
+                        $inputs.on('focus', function(e) {
+                            e.preventDefault();
+                            $(options.closeButton).focus();
+                        });
+                    });
+                });
+                function close_modal(modal_id) {
+                    var $modal = $(modal_id);
+                    $('select, input, textarea, button, a').off('focus');
+                    $("#" + overlay_id).fadeOut(200);
+                    $modal.css({"display": "none"});
+                    $modal.attr('aria-hidden', true);
+                    $modal.find('iframe').attr('src', '');
+                    $('body').css('overflow', 'auto');
+                    $trigger.focus();
+                }
+            }
+        });
+
+        var $element = $(element);
+        var $ltiContainer = $element.find('.lti-consumer-container');
+        var askToSendUsername = $ltiContainer.data('ask-to-send-username') == 'True';
+        var askToSendEmail = $ltiContainer.data('ask-to-send-email') == 'True';
+
+        // Apply click handler to modal launch button
+        $element.find('.btn-lti-modal').iframeModal({top: 200, closeButton: '.close-modal'});
+
+        // Apply click handler to new window launch button
+        $element.find('.btn-lti-new-window').click(function(){
+            var launch = true;
+
+            // If this instance is configured to require username and/or email, ask user if it is okay to send them
+            // Do not launch if it is not okay
+            if(askToSendUsername && askToSendEmail) {
+                launch = confirm(gettext("Click OK to have your username and e-mail address sent to a 3rd party application.\n\nClick Cancel to return to this page without sending your information."));
+            } else if (askToSendUsername) {
+                launch = confirm(gettext("Click OK to have your username sent to a 3rd party application.\n\nClick Cancel to return to this page without sending your information."));
+            } else if (askToSendEmail) {
+                launch = confirm(gettext("Click OK to have your e-mail address sent to a 3rd party application.\n\nClick Cancel to return to this page without sending your information."));
+            }
+
+            if (launch) {
+                window.open($(this).data('target'));
+            }
+        });
+    });
+}
+
+</script>
+<script src='https://prod-edxapp.edx-cdn.org/static/xblock/resources/xmodule.vertical_block/public/js/vertical_student_view.9f03a40c9517.js' type='application/javascript'></script>
+
+
+
+  
+
+
+    <!-- begin segment footer -->
+    <script type="text/javascript">
+        $(window).load(function() {
+            analytics.identify(
+                "16104109",
+                {
+                    email: "hafidzjazuli@gmail.com",
+                    username: "hafidzjazuli"
+                },
+                {
+                    integrations: {
+                        // Disable MailChimp because we don't want to update the user's email
+                        // and username in MailChimp on every page load. We only need to capture
+                        // this data on registration/activation.
+                        MailChimp: false
+                    }
+                }
+            );
+        });
+    </script>
+    <!-- end segment footer -->
+
+  <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/vendor/noreferrer.aa62a3e70ffa.js" charset="utf-8"></script>
+  <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/utils/navigation.323bf3e1ae16.js" charset="utf-8"></script>
+  
+</body>
+</html>
+
+
+
+<!-- Performance beacon for onload times -->
+<script>
+  (function () {
+    var sample_rate = 0.05;
+    var roll = Math.floor(Math.random() * 100)/100;
+    var onloadBeaconSent = false;
+
+    if(roll < sample_rate){
+      $(window).load(function() {
+        setTimeout(function(){
+          var t = window.performance.timing;
+
+          var data = {
+            event: "onload",
+            value: t.loadEventEnd - t.navigationStart,
+            page: window.location.href,
+          };
+
+          if (!onloadBeaconSent) {
+            $.ajax({method: "POST", url: "/performance", data: data});
+          }
+          onloadBeaconSent = true;
+        }, 0);
+      });
+    }
+  }());
+</script>
