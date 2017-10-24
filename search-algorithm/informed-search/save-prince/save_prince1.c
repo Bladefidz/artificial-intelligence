@@ -99,6 +99,6 @@ int main(void) {
         scanf("%s", line);
         strcpy(grid[i], line);
     }
-    displayPathtoPrincess(m,grid);
+    deterministicShortestPathFindPrince(m,grid);
     return 0;
 }
