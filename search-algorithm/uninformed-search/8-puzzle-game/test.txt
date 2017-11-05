@@ -1,1 +1,0 @@
-yo is ['up', 'down', 'left']
