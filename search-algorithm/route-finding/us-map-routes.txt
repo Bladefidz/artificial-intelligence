@@ -1,0 +1,11 @@
+DFS
+Chicago-Vancouver
+Chicago,Duluth,Helena,Calgary,Vancouver
+
+BFS
+Pittsburgh-Raleigh
+Pittsburgh,Chicago,New York,Toronto,Washington,Duluth,Omaha,Saint Louis,Boston,Montreal,Sault Ste Marie,Releigh
+
+UCS
+Montreal-Duluth
+Montreal, Boston, New York, Toronto, Pittsburgh, Washington, Sault Ste Marie, Raleigh, Chicago, Duluth
