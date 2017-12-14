@@ -1,7 +1,6 @@
 import sys
 import math
 import time
-import resource
 from collections import deque
 from queue import PriorityQueue
 
@@ -29,9 +28,8 @@ class Board(object):
 		self.manhattan = 0
 
 		self.id = 0
-		if self.board[0] != 0:
-			for i in range(len(self.board) - 1, -1, -1):
-				self.id += self.board[len(self.board) - i - 1] * 10 ** i
+		for i in range(len(board) - 1, -1, -1):
+			self.id += board[len(board) - i - 1] * 10 ** i
 
 	def hasDuplicate(self):
 		'''
@@ -278,12 +276,9 @@ class Solver(object):
 					if n.id not in explored:
 						frontiers.append(n)
 
-						self.expandedNode += 1
 						if n.depth > self.maxSearchDepth:
 							self.maxSearchDepth = n.depth
-						# print(self.expandedNode)
-						# print(n)
-
+			self.expandedNode += 1
 		self.timeEnd = time.time()
 
 	def dfs(self):
@@ -311,9 +306,9 @@ class Solver(object):
 					if n.id not in explored:
 						frontiers.append(n)
 
-						self.expandedNode += 1
 						if n.depth > self.maxSearchDepth:
 							self.maxSearchDepth = n.depth
+			self.expandedNode += 1
 
 		self.timeEnd = time.time()
 
@@ -343,10 +338,9 @@ class Solver(object):
 					if n.id not in explored:
 						pq.put(n)
 
-						self.expandedNode += 1
 						if n.depth > self.maxSearchDepth:
 							self.maxSearchDepth = n.depth
-
+			self.expandedNode += 1
 		self.timeEnd = time.time()
 
 	def isSolved(self):
@@ -363,7 +357,7 @@ class Solver(object):
 		return None
 
 	def solveTime(self):
-		return self.timeEnd - self.timeStart
+		return self.timeEnd - self.timeStart + 0.0001
 
 
 def solve(method, board):
@@ -382,15 +376,38 @@ def solve(method, board):
 			return False
 
 		f = open('output.txt', 'w')
-		f.write("path_to_goal: {}\n".format(list(solver.getPath())))
-		f.write("cost_of_path: {}\n".format(solver.cost))
-		f.write("nodes_expanded: {}\n".format(solver.expandedNode))
-		f.write("search_depth: {}\n".format(solver.searchDepth))
-		f.write("max_search_depth: {}\n".format(solver.maxSearchDepth))
-		f.write("running_time: {}\n".format(solver.solveTime()))
-		f.write("max_ram_usage: {}\n".format(
-			resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024)
-		)
+
+		if solver.solved:
+			# How we should move to reach goal
+			f.write("path_to_goal: {}\n".format(list(solver.getPath())))
+
+			# How much cost to the goal
+			f.write("cost_of_path: {}\n".format(solver.cost))
+
+			# Node that have been expanded to the goal node
+			f.write("nodes_expanded: {}\n".format(solver.expandedNode))
+
+			# How depth needed to found the goal
+			f.write("search_depth: {}\n".format(solver.searchDepth))
+
+			# Maximum depth of the search tree in the lifetime of the algorithm
+			f.write("max_search_depth: {}\n".format(solver.maxSearchDepth))
+
+			# Total running time of the search instance in seconds
+			f.write("running_time: {}\n".format(solver.solveTime()))
+
+			# Maximum RAM usage in the lifetime of the process in megabytes
+			mem = 0.0
+			if sys.platform == "win32":
+			    import psutil
+			    mem = psutil.Process().memory_info().rss / 1024
+			else:
+				import resource
+				mem = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024
+			f.write("max_ram_usage: {}\n".format(mem))
+		else:
+			f.write("Not solved!\n")
+			print("Not solved!\nNode expanded:", solver.expandedNode)
 		f.close()
 
 
